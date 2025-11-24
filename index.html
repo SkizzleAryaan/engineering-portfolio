@@ -2,23 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aryaan's Engineering Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering Portfolio</title>
+  <style>
+    body { font-family: sans-serif; background: #f9f9f9; padding: 2rem; max-width: 1000px; margin: auto; }
+    header { text-align: center; margin-bottom: 3rem; }
+    h1 { font-size: 3rem; }
+    nav { text-align: center; margin-bottom: 2rem; }
+    nav a { margin: 0 1rem; text-decoration: none; color: #0066cc; font-weight: bold; }
+    .project-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .project-card { background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 1rem; transition: 0.3s ease; }
+    .project-card:hover { transform: translateY(-5px); }
+    .project-card h2 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .project-card p { font-size: 0.95rem; color: #555; }
+    footer { margin-top: 3rem; text-align: center; font-size: 0.85rem; color: #aaa; }
+  </style>
 </head>
-<body style="font-family:sans-serif; padding: 2rem;">
-  <h1>🛠 Aryaan's Engineering Portfolio</h1>
-  <p>Welcome! Here are some of the engineering projects I've worked on:</p>
+<body>
+  <header>
+    <h1>Anthony Reyna – Engineering Portfolio</h1>
+    <p>Projects across embedded systems, robotics, software, and more.</p>
+  </header>
 
-  <ul>
-    <li><strong>TM4C Game Console</strong> – Built a full game system with real-time audio, input, and interrupt-based firmware.</li>
-    <li><strong>Pet Travel Safety System</strong> – Designed a smart cabin monitor for traveling pets using temperature sensing and fail-safes.</li>
-    <li><strong>ESP32-to-TM4C Bridge</strong> – Created a Wi-Fi-enabled embedded bridge for UART data passthrough and logging.</li>
-    <li><strong>Thrust Vectoring Rocket Firmware</strong> – Wrote Arduino-based control firmware for a custom gimbal actuator system.</li>
-    <li><strong>eClair Robotics Companion</strong> – Built a real-world talking robotic sidekick powered by an OLED face and servo arms.</li>
-    <li><strong>ADync Custom ADC Toolkit</strong> – Created a tool to experiment with high-speed analog-to-digital sampling in C.</li>
-  </ul>
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#about">About Me</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <p>More coming soon! Check out my <a href="https://github.com/SkizzleAryaan">GitHub</a>.</p>
+  <section id="projects">
+    <h2>Project Index</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <h2>1. Pet Travel Monitor</h2>
+        <p>A travel-safe embedded system that monitors pet environment conditions.</p>
+      </div>
+      <div class="project-card">
+        <h2>2. Adync™ Social Quest App</h2>
+        <p>Social media challenge tracker app with curated photo quests and events.</p>
+      </div>
+      <div class="project-card">
+        <h2>3. TM4C ↔ ESP32 Gateway</h2>
+        <p>A low-latency communication protocol between TM4C microcontroller and ESP32 over UART/SPI.</p>
+      </div>
+      <div class="project-card">
+        <h2>4. PastorBot Embedded System</h2>
+        <p>Modular bot featuring RTC, OLED, GPS, buzzer, EEPROM, and FRAM with MicroPython + C SDK.</p>
+      </div>
+      <div class="project-card">
+        <h2>5. Eclair Robotics – Flying Pod</h2>
+        <p>Experimental coaxial ducted fan drone for fast vertical takeoff and soft indoor landings.</p>
+      </div>
+      <div class="project-card">
+        <h2>6. SM64 Handheld Console</h2>
+        <p>Custom ROM hack console built around a 7" LCD, joystick input, and Raspberry Pi compute core.</p>
+      </div>
+      <div class="project-card">
+        <h2>7. Adventure Time BMO Replica</h2>
+        <p>Interactive talking BMO with LCD faceplate, heat-inserted shell, and gaming ROM support.</p>
+      </div>
+      <div class="project-card">
+        <h2>8. LC-3b Page Fault Microarch</h2>
+        <p>Custom state machine, datapath, and microcode for virtual memory page fault handling in LC-3b.</p>
+      </div>
+      <div class="project-card">
+        <h2>9. Marvel Rivals Lab Show</h2>
+        <p>YouTube series testing absurd comps in Marvel Rivals — chaos meets off-meta gameplay fun.</p>
+      </div>
+      <div class="project-card">
+        <h2>10. Noob to Speedrunner Series</h2>
+        <p>Challenge series documenting the journey from Minecraft noob to world record chaser.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="margin-top: 4rem;">
+    <h2>About Me</h2>
+    <p>Hi! I'm Anthony, a UT Austin ECE student and engineering content creator. I specialize in embedded systems, robotics, and storytelling through tech. This portfolio contains every major project I've built so far—whether for class, YouTube, or personal challenge.</p>
+  </section>
+
+  <section id="contact" style="margin-top: 4rem;">
+    <h2>Contact</h2>
+    <p>Feel free to reach out via <a href="mailto:youremail@example.com">youremail@example.com</a> or on <a href="https://github.com/SkizzleAryaan">GitHub</a>.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Anthony Reyna – Portfolio built with GitHub Pages.
+  </footer>
 </body>
 </html>
-
