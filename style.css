@@ -95,6 +95,21 @@ nav a {
   padding: 0.3rem 0.5rem;
   transition: 0.2s;
 }
+/* Persona-style outline for nav links and subtitle */
+header p,
+nav a {
+  font-weight: 800;
+  color: var(--white);
+
+  text-shadow:
+    3px 3px 0 #000,
+    -3px -3px 0 #000,
+    3px -3px 0 #000,
+    -3px 3px 0 #000;
+
+  transform: skewY(0deg) !important; 
+}
+
 
 nav a:hover {
   color: var(--black);
