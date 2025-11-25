@@ -37,17 +37,6 @@ body {
   position: relative;
 }
 
-/* Halftone overlay */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url("https://i.imgur.com/pT9VpB2.png?cache=1");
-  opacity: 0.12;
-  pointer-events: none;
-  z-index: -2;
-}
-
 /* Animated P5 stripes */
 body::after {
   content: "";
