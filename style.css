@@ -27,7 +27,7 @@ html {
   }
 }
 
-/* ===== BACKGROUND: Halftone + Phantom Thieves Stripes ===== */
+/* ===== BACKGROUND (clean black, no halftone, no errors) ===== */
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -37,27 +37,9 @@ body {
   position: relative;
 }
 
-/* Animated P5 stripes */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 300%;
-  height: 300%;
-  background: repeating-linear-gradient(
-      -45deg,
-      rgba(255, 0, 0, 0.10) 0 20px,
-      transparent 20px 40px
-  );
-  animation: stripesMove 12s linear infinite;
-  z-index: -3;
-  pointer-events: none;
-}
-
-@keyframes stripesMove {
-  from { transform: translate3d(0,0,0); }
-  to   { transform: translate3d(-300px,-300px,0); }
-}
+/* REMOVE broken stripe BG (commented out)
+body::after { ... } 
+*/
 
 /* ===== HEADER ===== */
 header {
@@ -66,40 +48,40 @@ header {
   text-align: center;
   border-bottom: var(--outline);
   box-shadow: 0 6px 0 #000;
-  transform: skewY(-2deg);
+  transform: skewY(-2.5deg);   /* slanted panel */
 }
 
+/* text inside the header must UN-SKEW to stay readable */
+header h1,
+header p,
+nav {
+  transform: skewY(2.5deg);
+}
+
+/* Persona 5 title style */
 header h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 3.2rem;
   font-weight: 900;
   margin: 0;
   color: var(--white);
-
-  /* NO skew on the text — keeps it crisp */
-  transform: none;
-
-  /* clean Persona outline */
+  transform: none;         /* removes distortion from text */
   text-shadow:
     4px 4px 0 #000,
     -4px -4px 0 #000,
     4px -4px 0 #000,
     -4px 4px 0 #000;
-
-
 }
 
 header p {
   color: #fff;
   margin-top: 0.5rem;
   font-size: 1.1rem;
-  transform: skewY(2deg);
 }
 
 /* ===== NAV ===== */
 nav {
   margin-top: 1.2rem;
-  transform: skewY(2deg);
 }
 
 nav a {
@@ -139,22 +121,22 @@ section h2 {
   color: var(--red);
 }
 
-/* ===== JAGGED EDGES BETWEEN SECTIONS (Persona TV static edge) ===== */
+/* ===== JAGGED EDGES BETWEEN SECTIONS ===== */
 .jagged {
   width: 100%;
   height: 25px;
   background: url("https://i.imgur.com/E1vKwQZ.png") repeat-x;
-  margin: 3rem 0;
+  margin: 3rem 0 1rem;
 }
 
-/* ===== RED SECTION DIVIDER BAR ===== */
+/* ===== RED SECTION DIVIDER ===== */
 .section-divider {
   width: 100%;
   height: 6px;
   background: var(--red);
   border-top: 3px solid #000;
   border-bottom: 3px solid #000;
-  margin: 2.5rem 0;
+  margin: 2rem 0 3rem;
 }
 
 /* ===== GRID ===== */
@@ -163,7 +145,7 @@ section h2 {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
   padding: 2.5rem;
-  transform: skewY(1deg);
+  transform: skewY(1deg); /* slight persona tilt */
 }
 
 /* ===== PERSONA 5 CARDS ===== */
