@@ -11,24 +11,63 @@
   --radius: 10px;
 }
 
-/* ===== GLOBAL ===== */
+/* ===== GLOBAL PAGE TRANSITION (Persona whip-pan) ===== */
+html {
+  animation: whipPan 0.6s cubic-bezier(.17,.67,.55,1.47);
+}
+
+@keyframes whipPan {
+  0% {
+    transform: translateX(120%) skewX(-20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) skewX(0deg);
+    opacity: 1;
+  }
+}
+
+/* ===== BACKGROUND: Halftone + Phantom Thieves Stripes ===== */
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   background: var(--black);
   color: var(--white);
   overflow-x: hidden;
+  position: relative;
 }
 
-/* Comic halftone background pattern */
+/* Halftone overlay */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url("https://i.imgur.com/5mqZQ0S.png");
-  opacity: 0.15;
+  background: url("https://i.imgur.com/QgrskUO.png"); /* stable halftone */
+  opacity: 0.12;
   pointer-events: none;
-  z-index: -1;
+  z-index: -2;
+}
+
+/* Animated P5 stripes */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 300%;
+  height: 300%;
+  background: repeating-linear-gradient(
+      -45deg,
+      rgba(255, 0, 0, 0.10) 0 20px,
+      transparent 20px 40px
+  );
+  animation: stripesMove 12s linear infinite;
+  z-index: -3;
+  pointer-events: none;
+}
+
+@keyframes stripesMove {
+  from { transform: translate3d(0,0,0); }
+  to   { transform: translate3d(-300px,-300px,0); }
 }
 
 /* ===== HEADER ===== */
@@ -43,12 +82,19 @@ header {
 
 header h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 900;
   margin: 0;
   color: var(--white);
-  text-shadow: 4px 4px 0 #000;
   transform: skewY(2deg);
+
+  /* Persona menu double-outline */
+  text-shadow:
+    4px 4px 0 #000,
+    -4px -4px 0 #000,
+    4px -4px 0 #000,
+    -4px 4px 0 #000,
+    0px 0px 10px rgba(0,0,0,0.6);
 }
 
 header p {
@@ -69,34 +115,19 @@ nav a {
   text-decoration: none;
   margin: 0 1rem;
   font-weight: 700;
-  position: relative;
-  padding: 0.3rem 0.5rem;
   font-family: "Montserrat", sans-serif;
   font-size: 1.05rem;
+  position: relative;
+  padding: 0.3rem 0.5rem;
   transition: 0.2s;
 }
 
 nav a:hover {
-  color: var(--red);
+  color: var(--black);
+  background: var(--white);
 }
 
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0; bottom: -4px;
-  width: 100%;
-  height: 3px;
-  background: var(--red);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: 0.25s;
-}
-
-nav a:hover::after {
-  transform: scaleX(1);
-}
-
-/* ===== SECTION TITLES ===== */
+/* ===== SECTION TITLE WITH STAR BURST ===== */
 .section-title,
 section h2 {
   text-align: center;
@@ -116,6 +147,24 @@ section h2 {
   color: var(--red);
 }
 
+/* ===== JAGGED EDGES BETWEEN SECTIONS (Persona TV static edge) ===== */
+.jagged {
+  width: 100%;
+  height: 25px;
+  background: url("https://i.imgur.com/E1vKwQZ.png") repeat-x;
+  margin: 3rem 0;
+}
+
+/* ===== RED SECTION DIVIDER BAR ===== */
+.section-divider {
+  width: 100%;
+  height: 6px;
+  background: var(--red);
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  margin: 2.5rem 0;
+}
+
 /* ===== GRID ===== */
 .grid {
   display: grid;
@@ -125,7 +174,7 @@ section h2 {
   transform: skewY(1deg);
 }
 
-/* ===== PERSONA 5 STYLE CARD ===== */
+/* ===== PERSONA 5 CARDS ===== */
 .card {
   background: var(--card-bg);
   padding: 1.4rem;
@@ -133,15 +182,13 @@ section h2 {
   border: var(--outline);
   box-shadow: 6px 6px 0 #000;
   cursor: pointer;
-
-  /* Persona-style tilt */
   transform: skewX(-2deg);
   transition: 0.25s ease;
   position: relative;
   overflow: hidden;
 }
 
-/* Angled white highlight */
+/* angled highlight */
 .card::before {
   content: "";
   position: absolute;
@@ -153,14 +200,14 @@ section h2 {
   transform: rotate(15deg);
 }
 
-/* Hover effect */
+/* hover effect */
 .card:hover {
   transform: translateY(-8px) skewX(-2deg) scale(1.03);
   box-shadow: 10px 10px 0 #000;
   border-color: var(--red);
 }
 
-/* Card title */
+/* labels */
 .card h3 {
   margin: 0 0 0.4rem;
   font-family: "Montserrat", sans-serif;
@@ -169,12 +216,9 @@ section h2 {
   text-shadow: 3px 3px 0 #000;
 }
 
-/* Card description */
 .card p {
   color: var(--gray);
-  margin: 0;
   font-size: 0.95rem;
-  line-height: 1.45;
 }
 
 /* ===== FOOTER ===== */
@@ -185,5 +229,4 @@ footer {
   font-size: 0.9rem;
   border-top: var(--outline);
   margin-top: 3rem;
-  background: var(--black);
 }
