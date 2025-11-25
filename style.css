@@ -1,6 +1,9 @@
 /* ===== FONTS ===== */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto:wght@300;400;500&display=swap');
 
+/* ============================================
+   ROOT VARIABLES
+============================================ */
 :root {
   --red: #e4002b;
   --black: #0a0a0a;
@@ -11,7 +14,9 @@
   --radius: 10px;
 }
 
-/* ===== GLOBAL PAGE TRANSITION ===== */
+/* ============================================
+   GLOBAL PAGE WHIP TRANSITION
+============================================ */
 html {
   animation: whipPan 0.6s cubic-bezier(.17,.67,.55,1.47);
 }
@@ -27,7 +32,9 @@ html {
   }
 }
 
-/* ===== BACKGROUND ===== */
+/* ============================================
+   BACKGROUND STRIPES
+============================================ */
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -37,7 +44,7 @@ body {
   position: relative;
 }
 
-/* Animated Phantom Thieves stripes */
+/* animated phantom thieves stripes */
 body::after {
   content: "";
   position: fixed;
@@ -58,7 +65,18 @@ body::after {
   to   { transform: translate3d(-300px,-300px,0); }
 }
 
-/* ===== HEADER ===== */
+/* ============================================
+   PAGE WRAPPER — CRITICAL FIX
+   Makes content centered after header skew.
+============================================ */
+.page-wrapper {
+  transform: skewY(3deg);
+  padding: 0 2rem;
+}
+
+/* ============================================
+   HEADER
+============================================ */
 header {
   background: var(--red);
   padding: 2.5rem 1rem;
@@ -74,7 +92,10 @@ header h1 {
   font-weight: 900;
   margin: 0;
   color: var(--white);
+
+  /* counter-skew so title stays sharp */
   transform: skewY(3deg);
+
   text-shadow:
     4px 4px 0 #000,
     -4px -4px 0 #000,
@@ -82,18 +103,20 @@ header h1 {
     -4px 4px 0 #000;
 }
 
-/* Description text – NOT bold */
+/* description — not bold */
 header p {
   margin-top: 0.5rem;
   font-size: 1.15rem;
-  font-weight: 300;        /* <-- FIX: remove bold */
-  transform: skewY(3deg);  /* tilted now */
+  font-weight: 300;
+  transform: skewY(3deg);
 }
 
-/* ===== NAV ===== */
+/* ============================================
+   NAVIGATION
+============================================ */
 nav {
   margin-top: 1.2rem;
-  transform: skewY(3deg); /* FIXED tilt */
+  transform: skewY(3deg);
 }
 
 nav a {
@@ -101,14 +124,13 @@ nav a {
   text-decoration: none;
   margin: 0 1rem;
   font-family: "Roboto", sans-serif;
-  font-weight: 400;       /* <-- FIXED bold removed */
+  font-weight: 400; /* not bold */
   font-size: 1.05rem;
-  position: relative;
   padding: 0.3rem 0.5rem;
   transition: 0.2s ease;
 }
 
-/* Prevent duplicate weird hover text rendering */
+/* remove double-hover ghost text bug */
 nav a::after { display: none !important; }
 
 nav a:hover {
@@ -117,15 +139,16 @@ nav a:hover {
   border-radius: 4px;
 }
 
-/* ===== SECTION TITLES ===== */
+/* ============================================
+   SECTION TITLES
+============================================ */
 .section-title {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 2.4rem;
-  margin: 3rem 0 1rem;
+  margin: 4rem 0 1rem;
   color: var(--white);
   text-shadow: 3px 3px 0 #000;
-  position: relative;
 }
 
 .section-title::after {
@@ -136,31 +159,36 @@ nav a:hover {
   color: var(--red);
 }
 
-/* ===== SECTION DIVIDERS ===== */
+/* ============================================
+   SECTION DIVIDERS
+============================================ */
 .section-divider {
   width: 100%;
   height: 7px;
   background: var(--red);
   border-top: 3px solid #000;
   border-bottom: 3px solid #000;
-  margin: 3rem 0;
+  margin: 4rem 0;
 }
 
-/* Remove ONLY the first divider (under header) */
+/* remove ONLY the first divider */
 .section-divider:first-of-type {
   display: none;
 }
 
-/* ===== GRID ===== */
+/* ============================================
+   GRID
+============================================ */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
-  padding: 2.5rem;
-  transform: skewY(1.5deg);
+  padding: 2.5rem 0;
 }
 
-/* ===== CARDS ===== */
+/* ============================================
+   CARDS
+============================================ */
 .card {
   background: var(--card-bg);
   padding: 1.4rem;
@@ -202,10 +230,12 @@ nav a:hover {
   color: var(--gray);
 }
 
-/* ===== FOOTER ===== */
+/* ============================================
+   FOOTER
+============================================ */
 footer {
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 0;
   color: var(--gray);
   font-size: 0.9rem;
   border-top: var(--outline);
