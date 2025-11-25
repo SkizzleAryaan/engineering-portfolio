@@ -42,7 +42,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url("https://i.imgur.com/QgrskUO.png"); /* stable halftone */
+  background: url("https://i.imgur.com/pT9VpB2.png?cache=1");
   opacity: 0.12;
   pointer-events: none;
   z-index: -2;
@@ -82,19 +82,22 @@ header {
 
 header h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: 900;
   margin: 0;
   color: var(--white);
-  transform: skewY(2deg);
 
-  /* Persona menu double-outline */
+  /* NO skew on the text — keeps it crisp */
+  transform: none;
+
+  /* clean Persona outline */
   text-shadow:
     4px 4px 0 #000,
     -4px -4px 0 #000,
     4px -4px 0 #000,
-    -4px 4px 0 #000,
-    0px 0px 10px rgba(0,0,0,0.6);
+    -4px 4px 0 #000;
+
+
 }
 
 header p {
