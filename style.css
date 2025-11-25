@@ -11,7 +11,7 @@
   --radius: 10px;
 }
 
-/* ===== GLOBAL PAGE TRANSITION (Persona whip-pan) ===== */
+/* ===== GLOBAL PAGE TRANSITION ===== */
 html {
   animation: whipPan 0.6s cubic-bezier(.17,.67,.55,1.47);
 }
@@ -27,7 +27,7 @@ html {
   }
 }
 
-/* ===== BACKGROUND (clean black, no halftone, no errors) ===== */
+/* ===== BACKGROUND ===== */
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -37,10 +37,6 @@ body {
   position: relative;
 }
 
-/* REMOVE broken stripe BG (commented out)
-body::after { ... } 
-*/
-
 /* ===== HEADER ===== */
 header {
   background: var(--red);
@@ -48,24 +44,25 @@ header {
   text-align: center;
   border-bottom: var(--outline);
   box-shadow: 0 6px 0 #000;
-  transform: skewY(-2.5deg);   /* slanted panel */
+  transform: skewY(-2.5deg);
 }
 
-/* text inside the header must UN-SKEW to stay readable */
+/* Keep header text straight + crisp */
 header h1,
 header p,
 nav {
   transform: skewY(2.5deg);
 }
 
-/* Persona 5 title style */
+/* Title */
 header h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 3.2rem;
   font-weight: 900;
   margin: 0;
   color: var(--white);
-  transform: none;         /* removes distortion from text */
+
+  /* Persona 5 Outline */
   text-shadow:
     4px 4px 0 #000,
     -4px -4px 0 #000,
@@ -73,50 +70,58 @@ header h1 {
     -4px 4px 0 #000;
 }
 
+/* Subtitle */
 header p {
-  color: #fff;
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
+  margin-top: 0.6rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--white);
+
+  text-shadow:
+    2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000;
 }
 
 /* ===== NAV ===== */
 nav {
-  margin-top: 1.2rem;
+  margin-top: 1.4rem;
+  transform: skewY(2.5deg);
 }
 
+/* Nav Items */
 nav a {
   color: var(--white);
   text-decoration: none;
   margin: 0 1rem;
-  font-weight: 700;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.05rem;
-  position: relative;
+  font-size: 1.1rem;
+  font-weight: 600;
+
   padding: 0.3rem 0.5rem;
+  position: relative;
   transition: 0.2s;
-}
-/* Persona-style outline for nav links and subtitle */
-header p,
-nav a {
-  font-weight: 800;
-  color: var(--white);
 
+  /* Straight text inside tilted nav strip */
+  transform: skewY(-2.5deg);
+
+  /* Persona outline */
   text-shadow:
-    3px 3px 0 #000,
-    -3px -3px 0 #000,
-    3px -3px 0 #000,
-    -3px 3px 0 #000;
-
-  transform: skewY(0deg) !important; 
+    2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000;
 }
 
-
+/* Hover removes outline (clean Persona behavior) */
 nav a:hover {
-  color: var(--black);
   background: var(--white);
+  color: var(--black);
+  text-shadow: none !important;
 }
 
-/* ===== SECTION TITLE WITH STAR BURST ===== */
+/* ===== SECTION TITLE ===== */
 .section-title,
 section h2 {
   text-align: center;
@@ -124,27 +129,23 @@ section h2 {
   font-size: 2.4rem;
   margin: 3rem 0 1rem;
   color: var(--white);
-  text-shadow: 3px 3px 0 #000;
-  position: relative;
+
+  text-shadow:
+    3px 3px 0 #000,
+    -3px -3px 0 #000,
+    3px -3px 0 #000,
+    -3px 3px 0 #000;
 }
 
 .section-title::after {
   content: "★";
   display: block;
   margin-top: 0.3rem;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: var(--red);
 }
 
-/* ===== JAGGED EDGES BETWEEN SECTIONS ===== */
-.jagged {
-  width: 100%;
-  height: 25px;
-  background: url("https://i.imgur.com/E1vKwQZ.png") repeat-x;
-  margin: 3rem 0 1rem;
-}
-
-/* ===== RED SECTION DIVIDER ===== */
+/* ===== SECTION DIVIDER ===== */
 .section-divider {
   width: 100%;
   height: 55px;
@@ -156,14 +157,13 @@ section h2 {
   margin: 3rem 0;
 }
 
-
 /* ===== GRID ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
   padding: 2.5rem;
-  transform: skewY(1deg); /* slight persona tilt */
+  transform: skewY(1deg);
 }
 
 /* ===== PERSONA 5 CARDS ===== */
@@ -174,13 +174,14 @@ section h2 {
   border: var(--outline);
   box-shadow: 6px 6px 0 #000;
   cursor: pointer;
+
   transform: skewX(-2deg);
   transition: 0.25s ease;
   position: relative;
   overflow: hidden;
 }
 
-/* angled highlight */
+/* Angled light beam */
 .card::before {
   content: "";
   position: absolute;
@@ -192,22 +193,28 @@ section h2 {
   transform: rotate(15deg);
 }
 
-/* hover effect */
+/* Hover */
 .card:hover {
   transform: translateY(-8px) skewX(-2deg) scale(1.03);
   box-shadow: 10px 10px 0 #000;
   border-color: var(--red);
 }
 
-/* labels */
+/* Card Title */
 .card h3 {
   margin: 0 0 0.4rem;
   font-family: "Montserrat", sans-serif;
   font-size: 1.45rem;
   color: var(--white);
-  text-shadow: 3px 3px 0 #000;
+
+  text-shadow:
+    3px 3px 0 #000,
+    -3px -3px 0 #000,
+    3px -3px 0 #000,
+    -3px 3px 0 #000;
 }
 
+/* Card Text */
 .card p {
   color: var(--gray);
   font-size: 0.95rem;
