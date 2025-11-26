@@ -1,243 +1,144 @@
 /* ===== FONTS ===== */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700&display=swap');
 
-/* ============================================
-   ROOT VARIABLES
-============================================ */
 :root {
-  --red: #e4002b;
-  --black: #0a0a0a;
+  --blue: #0A84FF;
+  --blue-dark: #0A3D77;
+  --black: #0A0A0A;
+  --gray-1: #F2F4F8;
+  --gray-2: #C7CCD5;
   --white: #ffffff;
-  --gray: #c4c4c4;
-  --card-bg: #111;
-  --outline: 3px solid #000;
-  --radius: 10px;
+  --text: #1A1A1A;
+  --radius: 12px;
 }
 
-/* ============================================
-   GLOBAL PAGE WHIP TRANSITION
-============================================ */
-html {
-  animation: whipPan 0.6s cubic-bezier(.17,.67,.55,1.47);
-}
-
-@keyframes whipPan {
-  0% {
-    transform: translateX(120%) skewX(-20deg);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0) skewX(0deg);
-    opacity: 1;
-  }
-}
-
-/* ============================================
-   BACKGROUND STRIPES
-============================================ */
+/* ===== GLOBAL ===== */
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
-  background: var(--black);
-  color: var(--white);
-  overflow-x: hidden;
-  position: relative;
+  font-family: "Inter", sans-serif;
+  background: var(--gray-1);
+  color: var(--text);
+  line-height: 1.6;
 }
 
-/* animated phantom thieves stripes */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 300%;
-  height: 300%;
-  background: repeating-linear-gradient(
-    -45deg,
-    rgba(255, 0, 0, 0.10) 0 20px,
-    transparent 20px 40px
-  );
-  animation: stripesMove 12s linear infinite;
-  z-index: -3;
-}
-
-@keyframes stripesMove {
-  from { transform: translate3d(0,0,0); }
-  to   { transform: translate3d(-300px,-300px,0); }
-}
-
-/* ============================================
-   PAGE WRAPPER — CRITICAL FIX
-   Makes content centered after header skew.
-============================================ */
-.page-wrapper {
-  transform: skewY(3deg);
-  padding: 0 2rem;
-}
-
-/* ============================================
-   HEADER
-============================================ */
+/* ===== HEADER ===== */
 header {
-  background: var(--red);
+  background: var(--white);
   padding: 2.5rem 1rem;
   text-align: center;
-  border-bottom: var(--outline);
-  box-shadow: 0 6px 0 #000;
-  transform: skewY(-3deg);
+  border-bottom: 1px solid var(--gray-2);
 }
 
 header h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 3.3rem;
-  font-weight: 900;
+  font-size: 2.4rem;
   margin: 0;
-  color: var(--white);
-
-  /* counter-skew so title stays sharp */
-  transform: skewY(3deg);
-
-  text-shadow:
-    4px 4px 0 #000,
-    -4px -4px 0 #000,
-    4px -4px 0 #000,
-    -4px 4px 0 #000;
+  font-weight: 700;
+  color: var(--black);
 }
 
-/* description — not bold */
 header p {
   margin-top: 0.5rem;
-  font-size: 1.15rem;
-  font-weight: 300;
-  transform: skewY(3deg);
+  color: #555;
+  font-size: 1.1rem;
 }
 
-/* ============================================
-   NAVIGATION
-============================================ */
+/* NAVIGATION */
 nav {
-  margin-top: 1.2rem;
-  transform: skewY(3deg);
+  margin-top: 1.4rem;
 }
 
 nav a {
-  color: var(--white);
-  text-decoration: none;
+  color: var(--black);
   margin: 0 1rem;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400; /* not bold */
-  font-size: 1.05rem;
-  padding: 0.3rem 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0.6rem;
   transition: 0.2s ease;
+  border-radius: 6px;
 }
-
-/* remove double-hover ghost text bug */
-nav a::after { display: none !important; }
 
 nav a:hover {
-  background: var(--white);
-  color: var(--black);
-  border-radius: 4px;
+  background: var(--blue);
+  color: white;
 }
 
-/* ============================================
-   SECTION TITLES
-============================================ */
-.section-title {
-  text-align: center;
+/* ===== MAIN CONTENT ===== */
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* SECTION TITLES */
+section h2 {
   font-family: "Montserrat", sans-serif;
-  font-size: 2.4rem;
-  margin: 4rem 0 1rem;
-  color: var(--white);
-  text-shadow: 3px 3px 0 #000;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--black);
+  text-align: center;
 }
 
-.section-title::after {
-  content: "★";
-  display: block;
-  margin-top: 0.3rem;
-  font-size: 1.3rem;
-  color: var(--red);
+.section-underline {
+  width: 60px;
+  height: 4px;
+  background: var(--blue);
+  margin: 0.5rem auto 2rem;
+  border-radius: 5px;
 }
 
-/* ============================================
-   SECTION DIVIDERS
-============================================ */
-.section-divider {
-  width: 100%;
-  height: 7px;
-  background: var(--red);
-  border-top: 3px solid #000;
-  border-bottom: 3px solid #000;
-  margin: 4rem 0;
-}
-
-/* remove ONLY the first divider */
-.section-divider:first-of-type {
-  display: none;
-}
-
-/* ============================================
-   GRID
-============================================ */
+/* ===== PROJECT GRID ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 2.5rem 0;
+  gap: 1.8rem;
+  padding-top: 1rem;
 }
 
-/* ============================================
-   CARDS
-============================================ */
+/* ===== PROJECT CARD ===== */
 .card {
-  background: var(--card-bg);
-  padding: 1.4rem;
+  background: var(--white);
   border-radius: var(--radius);
-  border: var(--outline);
-  box-shadow: 6px 6px 0 #000;
-  cursor: pointer;
-  transform: skewX(-2deg);
+  padding: 1.4rem;
+  border: 1px solid var(--gray-2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: 0.25s ease;
-  position: relative;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: -40px;
-  right: -80px;
-  width: 200px;
-  height: 100px;
-  background: rgba(255,255,255,0.08);
-  transform: rotate(15deg);
+  cursor: pointer;
 }
 
 .card:hover {
-  transform: translateY(-8px) skewX(-2deg) scale(1.03);
-  box-shadow: 10px 10px 0 #000;
-  border-color: var(--red);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  border-color: var(--blue);
 }
 
 .card h3 {
   margin: 0 0 0.4rem;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.45rem;
-  text-shadow: 3px 3px 0 #000;
+  font-size: 1.25rem;
+  color: var(--black);
 }
 
 .card p {
+  color: #555;
   font-size: 0.95rem;
-  color: var(--gray);
 }
 
-/* ============================================
-   FOOTER
-============================================ */
+/* ===== ABOUT + CONTACT SECTIONS ===== */
+section p {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  color: #444;
+  font-size: 1.05rem;
+}
+
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
-  padding: 2rem 0;
-  color: var(--gray);
-  font-size: 0.9rem;
-  border-top: var(--outline);
-  margin-top: 3rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  color: #555;
+  background: var(--white);
+  border-top: 1px solid var(--gray-2);
 }
