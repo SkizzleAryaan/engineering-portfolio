@@ -1,144 +1,154 @@
+/* -----------------------------------------------------------
+   APPLE-STYLE ENGINEERING PORTFOLIO THEME (LIGHT MODE)
+   Clean • Minimal • Professional • Premium
+----------------------------------------------------------- */
+
 /* ===== FONTS ===== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  --blue: #0A84FF;
-  --blue-dark: #0A3D77;
-  --black: #0A0A0A;
-  --gray-1: #F2F4F8;
-  --gray-2: #C7CCD5;
-  --white: #ffffff;
-  --text: #1A1A1A;
-  --radius: 12px;
+  --blue: #007AFF;      /* Official iOS blue */
+  --text: #1C1C1E;      /* Apple system text */
+  --subtle-text: #6e6e73;
+  --bg: #ffffff;
+  --section-bg: #F5F5F7;
+  --card-bg: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --radius: 14px;
 }
 
 /* ===== GLOBAL ===== */
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
-  background: var(--gray-1);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1.5rem;
 }
 
 /* ===== HEADER ===== */
 header {
-  background: var(--white);
-  padding: 2.5rem 1rem;
   text-align: center;
-  border-bottom: 1px solid var(--gray-2);
+  padding: 4rem 1rem 3rem;
 }
 
 header h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
+  font-weight: 600;
   margin: 0;
-  font-weight: 700;
-  color: var(--black);
 }
 
 header p {
-  margin-top: 0.5rem;
-  color: #555;
+  margin: 0.4rem 0 2rem;
+  color: var(--subtle-text);
   font-size: 1.1rem;
 }
 
-/* NAVIGATION */
+/* ===== NAVIGATION ===== */
 nav {
-  margin-top: 1.4rem;
+  margin-top: 1rem;
 }
 
 nav a {
-  color: var(--black);
   margin: 0 1rem;
   text-decoration: none;
+  color: var(--text);
   font-weight: 500;
-  padding: 0.4rem 0.6rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 8px;
   transition: 0.2s ease;
-  border-radius: 6px;
 }
 
 nav a:hover {
-  background: var(--blue);
-  color: white;
+  color: var(--blue);
+  background: rgba(0, 122, 255, 0.08);
 }
 
-/* ===== MAIN CONTENT ===== */
-main {
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
+/* ===== SECTION TITLES ===== */
+section {
+  padding: 4rem 0;
 }
 
-/* SECTION TITLES */
 section h2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: var(--black);
   text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
 }
 
 .section-underline {
-  width: 60px;
-  height: 4px;
+  width: 55px;
+  height: 3px;
   background: var(--blue);
-  margin: 0.5rem auto 2rem;
-  border-radius: 5px;
+  margin: 0.5rem auto 2.5rem;
+  border-radius: 4px;
 }
 
 /* ===== PROJECT GRID ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.8rem;
-  padding-top: 1rem;
+  gap: 2rem;
 }
 
-/* ===== PROJECT CARD ===== */
+/* ===== PROJECT CARDS ===== */
 .card {
-  background: var(--white);
+  background: var(--card-bg);
   border-radius: var(--radius);
-  padding: 1.4rem;
-  border: 1px solid var(--gray-2);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: 0.25s ease;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px var(--shadow);
   cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-  border-color: var(--blue);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
 }
 
 .card h3 {
-  margin: 0 0 0.4rem;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.25rem;
-  color: var(--black);
+  margin-top: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
 }
 
 .card p {
-  color: #555;
+  color: var(--subtle-text);
   font-size: 0.95rem;
 }
 
-/* ===== ABOUT + CONTACT SECTIONS ===== */
+/* ===== ABOUT & CONTACT ===== */
 section p {
   max-width: 800px;
   margin: auto;
   text-align: center;
-  color: #444;
+  color: var(--subtle-text);
   font-size: 1.05rem;
+}
+
+section a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+section a:hover {
+  text-decoration: underline;
 }
 
 /* ===== FOOTER ===== */
 footer {
-  text-align: center;
+  margin-top: 3rem;
   padding: 2rem;
-  margin-top: 2rem;
-  color: #555;
-  background: var(--white);
-  border-top: 1px solid var(--gray-2);
+  text-align: center;
+  background: var(--section-bg);
+  color: var(--subtle-text);
+  font-size: 0.95rem;
 }
