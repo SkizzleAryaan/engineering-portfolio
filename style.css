@@ -161,3 +161,120 @@ footer {
   font-size: 0.95rem;
   color: var(--subtle-text);
 }
+
+/* -----------------------------------------------------------
+   FEATURED PROJECT (APPLE STORE HERO CARD)
+----------------------------------------------------------- */
+
+#featured {
+  padding-top: 5rem;
+}
+
+.featured-card {
+  background: var(--white);
+  border-radius: 26px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: stretch;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s ease;
+  margin-bottom: 3rem;
+}
+
+.featured-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 50px rgba(0,0,0,0.16);
+}
+
+.featured-content {
+  flex: 1;
+  padding: 3rem 3rem;
+}
+
+.featured-content h3 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+.featured-content p {
+  font-size: 1.1rem;
+  color: var(--subtle-text);
+  max-width: 90%;
+  margin-bottom: 2rem;
+}
+
+.featured-btn {
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.6rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.featured-btn:hover {
+  background: #0062d6;
+}
+
+/* FEATURED IMAGE PLACEHOLDER */
+.featured-image {
+  width: 42%;
+  background: linear-gradient(135deg, #e3e7ff, #fdfdfd);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Replace with a real image later:
+.featured-image {
+  background-image: url('your-image-here.jpg');
+}
+*/
+
+
+/* -----------------------------------------------------------
+   SKILLS GRID (APPLE CAREERS LAYOUT)
+----------------------------------------------------------- */
+
+#skills {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.8rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.skill-card {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 1.6rem 1.4rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: 0.25s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 26px rgba(0,0,0,0.12);
+}
+
+.skill-card h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.skill-card p {
+  margin: 0;
+  color: var(--subtle-text);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
