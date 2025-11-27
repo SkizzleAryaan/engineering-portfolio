@@ -9,180 +9,131 @@
 </head>
 
 <body>
-
-  <!-- HEADER -->
   <header>
     <h1>Aryaan Saxena – Engineering Portfolio</h1>
     <p>Projects across embedded systems, robotics, games, and more.</p>
     <nav>
+      <a href="#featured">Featured</a>
       <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
       <a href="#about">About Me</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- ⭐ DIVIDER BETWEEN HEADER → PROJECTS -->
-  <div class="section-divider"></div>
+  <!-- ================= FEATURED PROJECTS ================= -->
+  <section id="featured">
+    <h2 class="section-title">Featured Projects <span>• The best of the best</span></h2>
 
-  <main>
+    <div class="featured-grid">
 
-    <section id="featured">
-      <h2>Featured Project</h2>
-      <div class="section-underline"></div>
-
-      <div class="featured-card" onclick="location.href='sm64-console.html'">
-        <div class="featured-content">
-          <h3>SM64 Handheld Console</h3>
-          <p>A custom-built portable console running a Super Mario 64 ROM hack, powered by a Raspberry Pi Zero with a 7" LCD display, custom buttons, stereo speakers, and a fully 3D-printed shell.</p>
-
-          <button class="featured-btn">View Project</button>
-        </div>
-
-        <div class="featured-image"></div>
+      <div class="featured-card">
+        <img src="https://via.placeholder.com/600x350" alt="Featured Project">
+        <h3>Eclair Robotics – Flying Pod</h3>
+        <p>A cutting-edge robotics prototype showcasing advanced control and flight design.</p>
       </div>
-    </section>
-  
-    <div class="section-divider"></div>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects">
-      <h2 class="section-title">Projects</h2>
-      <div class="section-underline"></div>
-      <div class="grid">
-
-        <div class="card" onclick="location.href='pet-travel.html'">
-          <h3>1. Pet Travel Monitor</h3>
-          <p>Travel-safe embedded system that monitors pet environment conditions in a vehicle.</p>
-        </div>
-
-        <div class="card" onclick="location.href='adync.html'">
-          <h3>2. Adync™ Social Quest App</h3>
-          <p>Social media app with curated photo quests and IRL challenge-based posting.</p>
-        </div>
-
-        <div class="card" onclick="location.href='tm4c-esp32.html'">
-          <h3>3. TM4C → ESP32 Gateway</h3>
-          <p>Low-latency communication over UART/SPI between microcontrollers.</p>
-        </div>
-
-        <div class="card" onclick="location.href='pastorbot.html'">
-          <h3>4. PastorBot Embedded System</h3>
-          <p>Modular bot with MicroPython + C SDK for RTC, OLED, GPS, EEPROM, FRAM, and more.</p>
-        </div>
-
-        <div class="card" onclick="location.href='eclair.html'">
-          <h3>5. Eclair Robotics – Flying Pod</h3>
-          <p>Coaxial ducted fan drone for vertical takeoff, soft landing, and thrust vectoring.</p>
-        </div>
-
-        <div class="card" onclick="location.href='sm64-console.html'">
-          <h3>6. SM64 Handheld Console</h3>
-          <p>Custom Mario ROM hack console with 7&quot; LCD and portable core.</p>
-        </div>
-
-        <div class="card" onclick="location.href='bmo.html'">
-          <h3>7. Adventure Time BMO Replica</h3>
-          <p>Interactive BMO with LCD, speaker, heat-inserts, and game ROMs.</p>
-        </div>
-
-        <div class="card" onclick="location.href='lc3b.html'">
-          <h3>8. LC-3b Page Fault Microarch</h3>
-          <p>Custom datapath, control logic, and state machine for page fault handling.</p>
-        </div>
-
-        <div class="card" onclick="location.href='marvel-rivals.html'">
-          <h3>9. Marvel Rivals Lab Show</h3>
-          <p>Off-meta team comp experiments turned into a creative video series.</p>
-        </div>
-
-        <div class="card" onclick="location.href='noob-speedrunner.html'">
-          <h3>10. Noob to Speedrunner Series</h3>
-          <p>Ongoing video series tracking my journey to Minecraft speedrun mastery.</p>
-        </div>
-
+      <div class="featured-card">
+        <img src="https://via.placeholder.com/600x350" alt="Featured Project">
+        <h3>TM4C → ESP32 Gateway</h3>
+        <p>A high-performance embedded communication bridge between two microcontroller systems.</p>
       </div>
-    </section>
 
-    <!-- ⭐ DIVIDER BETWEEN PROJECTS → ABOUT -->
-    <div class="section-divider"></div>
+      <div class="featured-card">
+        <img src="https://via.placeholder.com/600x350" alt="Featured Project">
+        <h3>Pet Travel Monitor</h3>
+        <p>A real-time embedded safety system designed to track and protect pets during travel.</p>
+      </div>
 
-    <!-- ABOUT ME SECTION -->
-    <section id="about">
-      <h2 class="section-title">About Me</h2>
-      <div class="section-underline"></div>
-      <p>
-        Hi! I'm Aryaan, a UT Austin ECE student and engineering content creator. I love building things—from firmware to
-        robotics to full-stack apps. I specialize in embedded systems, robotics, and telling great stories through tech.
-        This portfolio captures my best work so far.
-      </p>
-    </section>
-
-    <!-- ⭐ DIVIDER BETWEEN ABOUT → CONTACT -->
-    <div class="section-divider"></div>
-
-     <section id="skills">
-    <h2>Skills</h2>
-    <div class="section-underline"></div>
-  
-    <div class="skills-grid">
-  
-      <div class="skill-card">
-        <h4>Embedded Systems</h4>
-        <p>STM32, TM4C123, ESP32, RP2040, I²C, SPI, UART, ADC, PWM</p>
-      </div>
-  
-      <div class="skill-card">
-        <h4>Firmware Development</h4>
-        <p>C, C++, MicroPython, FreeRTOS, Memory-Mapped I/O</p>
-      </div>
-  
-      <div class="skill-card">
-        <h4>Robotics</h4>
-        <p>Motor control, GPS modules, IMUs, real-time sensing</p>
-      </div>
-  
-      <div class="skill-card">
-        <h4>Software Engineering</h4>
-        <p>Python, Flask, REST APIs, Git, Linux</p>
-      </div>
-  
-      <div class="skill-card">
-        <h4>Electronics</h4>
-        <p>Schematics, PCB design, soldering, power management</p>
-      </div>
-  
-      <div class="skill-card">
-        <h4>Tools & Platforms</h4>
-        <p>VS Code, KiCad, PlatformIO, J-Link, Logic Analyzers</p>
-      </div>
-  
     </div>
   </section>
 
-     <div class="section-divider"></div>
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects">
+    <h2 class="section-title">Projects <span>• My life's work</span></h2>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-      <h2 class="section-title">Contact</h2>
-      <div class="section-underline"></div>
-      <p>
-        Reach out at
-        <a href="mailto:youremail@example.com">youremail@example.com</a>
-        or visit my
-        <a href="https://github.com/yourusername">GitHub</a>.
-      </p>
-    </section>
+    <div class="project-grid">
 
-    <!-- ⭐ DIVIDER BEFORE FOOTER -->
-    <div class="section-divider"></div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/200" alt="">
+        <h3>Adync™ Social Quest App</h3>
+        <p>Social app built around curated photo quests and IRL challenges.</p>
+      </div>
 
-  </main>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/200" alt="">
+        <h3>SM64 Handheld Console</h3>
+        <p>Portable console powered by a Mario ROM hack and custom hardware.</p>
+      </div>
 
-  <!-- FOOTER -->
+      <div class="project-card">
+        <img src="https://via.placeholder.com/200" alt="">
+        <h3>Adventure Time BMO Replica</h3>
+        <p>Interactive BMO replica with LCD, audio, and game ROM support.</p>
+      </div>
+
+      <div class="project-card">
+        <img src="https://via.placeholder.com/200" alt="">
+        <h3>LC-3b Page Fault Microarch</h3>
+        <p>Microarchitecture implementing custom page-fault handling logic.</p>
+      </div>
+
+      <div class="project-card">
+        <img src="https://via.placeholder.com/200" alt="">
+        <h3>Marvel Rivals Lab Show</h3>
+        <p>Off-meta team comp experiments turned into a unique video series.</p>
+      </div>
+
+      <div class="project-card">
+        <img src="https://via.placeholder.com/200" alt="">
+        <h3>Noob to Speedrunner Series</h3>
+        <p>A journey from beginner to Minecraft speedrunner.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills">
+    <h2 class="section-title">Skills <span>• What I do best</span></h2>
+
+    <div class="skills-list">
+      <span>Embedded Systems</span>
+      <span>C / C++</span>
+      <span>Microcontrollers</span>
+      <span>ESP32 / STM32 / RP2040</span>
+      <span>Robotics</span>
+      <span>Firmware Engineering</span>
+      <span>PCB Design</span>
+      <span>Python</span>
+      <span>UART / SPI / I2C</span>
+      <span>Real-Time Systems</span>
+      <span>Machine Learning (basic)</span>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      Hi! I'm Aryaan, a UT Austin ECE student and engineering content creator.  
+      I build things—from firmware to robotics to full-stack apps.  
+      I specialize in embedded systems, microcontroller design, and technical storytelling.
+    </p>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p>
+      Reach out at <a href="mailto:youremail@example.com">youremail@example.com</a>  
+      or visit my <a href="#">GitHub</a>.
+    </p>
+  </section>
+
   <footer>
     <p>© 2025 Aryaan Saxena</p>
   </footer>
 
 </body>
-
 </html>
