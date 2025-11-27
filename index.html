@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,130 +8,137 @@
 </head>
 
 <body>
-  <header>
-    <h1>Aryaan Saxena – Engineering Portfolio</h1>
-    <p>Projects across embedded systems, robotics, games, and more.</p>
-    <nav>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-left">Aryaan Saxena</div>
+    <div class="nav-right">
       <a href="#featured">Featured</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
-      <a href="#about">About Me</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
-    </nav>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Engineering the Future</h1>
+    <p>Embedded systems • Robotics • Real-time architectures • Creative engineering</p>
   </header>
 
-  <!-- ================= FEATURED PROJECTS ================= -->
-  <section id="featured">
-    <h2 class="section-title">Featured Projects <span>• The best of the best</span></h2>
+  <!-- FEATURED PROJECTS -->
+  <section id="featured" class="section">
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-subtitle">The best of the best</p>
 
     <div class="featured-grid">
 
+      <!-- FEATURED 1 -->
       <div class="featured-card">
-        <img src="https://via.placeholder.com/600x350" alt="Featured Project">
+        <div class="featured-bg"></div>
+        <div class="featured-img placeholder"></div>
         <h3>Eclair Robotics – Flying Pod</h3>
-        <p>A cutting-edge robotics prototype showcasing advanced control and flight design.</p>
+        <p>A next-generation coaxial flight platform focused on thrust vectoring and efficiency.</p>
       </div>
 
+      <!-- FEATURED 2 -->
       <div class="featured-card">
-        <img src="https://via.placeholder.com/600x350" alt="Featured Project">
+        <div class="featured-bg"></div>
+        <div class="featured-img placeholder"></div>
         <h3>TM4C → ESP32 Gateway</h3>
-        <p>A high-performance embedded communication bridge between two microcontroller systems.</p>
+        <p>Ultra-low latency microcontroller communication pipeline for real-time systems.</p>
       </div>
 
+      <!-- FEATURED 3 -->
       <div class="featured-card">
-        <img src="https://via.placeholder.com/600x350" alt="Featured Project">
+        <div class="featured-bg"></div>
+        <div class="featured-img placeholder"></div>
         <h3>Pet Travel Monitor</h3>
-        <p>A real-time embedded safety system designed to track and protect pets during travel.</p>
+        <p>A reliable vehicle-mounted environmental monitor designed to keep pets safe.</p>
       </div>
 
     </div>
   </section>
 
-  <!-- ================= PROJECTS ================= -->
-  <section id="projects">
-    <h2 class="section-title">Projects <span>• My life's work</span></h2>
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-subtitle">My life's work</p>
 
     <div class="project-grid">
 
+      <!-- Example project cards -->
       <div class="project-card">
-        <img src="https://via.placeholder.com/200" alt="">
-        <h3>Adync™ Social Quest App</h3>
-        <p>Social app built around curated photo quests and IRL challenges.</p>
+        <div class="project-img placeholder"></div>
+        <h4>Eclair Robotics – Flying Pod</h4>
       </div>
 
       <div class="project-card">
-        <img src="https://via.placeholder.com/200" alt="">
-        <h3>SM64 Handheld Console</h3>
-        <p>Portable console powered by a Mario ROM hack and custom hardware.</p>
+        <div class="project-img placeholder"></div>
+        <h4>TM4C → ESP32 Gateway</h4>
       </div>
 
       <div class="project-card">
-        <img src="https://via.placeholder.com/200" alt="">
-        <h3>Adventure Time BMO Replica</h3>
-        <p>Interactive BMO replica with LCD, audio, and game ROM support.</p>
+        <div class="project-img placeholder"></div>
+        <h4>Pet Travel Monitor</h4>
       </div>
 
       <div class="project-card">
-        <img src="https://via.placeholder.com/200" alt="">
-        <h3>LC-3b Page Fault Microarch</h3>
-        <p>Microarchitecture implementing custom page-fault handling logic.</p>
+        <div class="project-img placeholder"></div>
+        <h4>Adventure Time BMO Replica</h4>
       </div>
 
       <div class="project-card">
-        <img src="https://via.placeholder.com/200" alt="">
-        <h3>Marvel Rivals Lab Show</h3>
-        <p>Off-meta team comp experiments turned into a unique video series.</p>
+        <div class="project-img placeholder"></div>
+        <h4>LC-3b Custom Microarchitecture</h4>
       </div>
 
       <div class="project-card">
-        <img src="https://via.placeholder.com/200" alt="">
-        <h3>Noob to Speedrunner Series</h3>
-        <p>A journey from beginner to Minecraft speedrunner.</p>
+        <div class="project-img placeholder"></div>
+        <h4>Noob to Speedrunner Series</h4>
       </div>
 
     </div>
   </section>
 
-  <!-- ================= SKILLS ================= -->
-  <section id="skills">
-    <h2 class="section-title">Skills <span>• What I do best</span></h2>
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2 class="section-title">Skills</h2>
+    <p class="section-subtitle">What I do best</p>
 
-    <div class="skills-list">
-      <span>Embedded Systems</span>
-      <span>C / C++</span>
-      <span>Microcontrollers</span>
-      <span>ESP32 / STM32 / RP2040</span>
-      <span>Robotics</span>
-      <span>Firmware Engineering</span>
-      <span>PCB Design</span>
-      <span>Python</span>
-      <span>UART / SPI / I2C</span>
-      <span>Real-Time Systems</span>
-      <span>Machine Learning (basic)</span>
+    <div class="skills-grid">
+      <span class="skill">C / C++ (Embedded)</span>
+      <span class="skill">MicroPython</span>
+      <span class="skill">PCB Design</span>
+      <span class="skill">UART / SPI / I2C</span>
+      <span class="skill">Real-Time Systems</span>
+      <span class="skill">Robotics</span>
+      <span class="skill">Firmware Optimization</span>
+      <span class="skill">Python</span>
+      <span class="skill">Git / GitHub</span>
+      <span class="skill">CAD & Rapid Prototyping</span>
     </div>
   </section>
 
-  <!-- ================= ABOUT ================= -->
-  <section id="about">
+  <!-- ABOUT -->
+  <section id="about" class="section">
     <h2 class="section-title">About Me</h2>
-    <p>
-      Hi! I'm Aryaan, a UT Austin ECE student and engineering content creator.  
-      I build things—from firmware to robotics to full-stack apps.  
-      I specialize in embedded systems, microcontroller design, and technical storytelling.
+    <p class="about-text">
+      I'm Aryaan, an engineering student specializing in embedded systems, robotics,
+      and creative technical design. I bring ideas to life through firmware, hardware,
+      and clean engineering execution.
     </p>
   </section>
 
-  <!-- ================= CONTACT ================= -->
-  <section id="contact">
+  <!-- CONTACT -->
+  <section id="contact" class="section">
     <h2 class="section-title">Contact</h2>
-    <p>
-      Reach out at <a href="mailto:youremail@example.com">youremail@example.com</a>  
-      or visit my <a href="#">GitHub</a>.
-    </p>
+    <p class="about-text">Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
   </section>
 
   <footer>
-    <p>© 2025 Aryaan Saxena</p>
+    © 2025 Aryaan Saxena
   </footer>
 
 </body>
