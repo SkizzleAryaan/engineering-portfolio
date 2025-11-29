@@ -300,3 +300,42 @@ footer {
   color: inherit;
 }
 
+/* Remove blue link style inside cards */
+.featured-card, 
+.project-card {
+  color: inherit;
+  text-decoration: none;
+}
+
+.featured-card h3,
+.featured-card p,
+.project-card h4 {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+/* Remove underline on hover too */
+.featured-card:hover h3,
+.project-card:hover h4 {
+  text-decoration: none;
+}
+
+/* Make the whole card show a blue outline on hover */
+.featured-card:hover,
+.project-card:hover {
+  border: 2px solid #1a73e8; /* your blue */
+  box-shadow: 0 6px 18px rgba(26, 115, 232, 0.25);
+  transform: translateY(-4px);
+  transition: all 0.15s ease;
+}
+
+/* Default card border (soft like Apple) */
+.featured-card,
+.project-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  display: block;
+  transition: all 0.15s ease;
+}
+
+
