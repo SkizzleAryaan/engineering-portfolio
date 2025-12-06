@@ -4,76 +4,83 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Networked IoT Alarm Clock | Aryaan Saxena</title>
+
+  <!-- Main shared stylesheet -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Page-specific styles -->
   <style>
-    /* Optional: light styling in case your main CSS doesn’t cover it */
-  .project-hero h1,
-    .section-title {
-      color: #111111;               /* headings */
+    body {
+      background: #ffffff;
+      color: #111111;
     }
 
-    .project-text,
-    .project-list li {
-      color: #111111;               /* paragraphs + bullets */
-    }
-
-    a {
-      color: #1d4ed8;               /* readable blue for links */
-    }
-  </style>
-    
     .project-hero {
       max-width: 900px;
       margin: 80px auto 40px;
       padding: 0 20px;
       text-align: left;
     }
+
     .project-hero h1 {
       font-size: 2.4rem;
       margin-bottom: 0.4rem;
+      color: #111111;
     }
+
     .project-subtitle {
-      color: #c7d7ff;
+      color: #555555;
       max-width: 600px;
     }
+
     .section {
       max-width: 900px;
       margin: 0 auto 40px;
       padding: 0 20px;
     }
+
     .section-title {
       font-size: 1.6rem;
       margin-bottom: 0.75rem;
+      color: #111111;
     }
+
     .project-text {
       line-height: 1.6;
-      color: #e5e9ff;
+      color: #111111;
     }
+
     .project-list {
       margin-top: 0.5rem;
       padding-left: 1.3rem;
     }
+
     .project-list li {
       margin-bottom: 0.25rem;
+      color: #111111;
     }
+
     .main-image {
       width: 100%;
       border-radius: 16px;
       display: block;
       margin: 0 auto;
     }
+
     .gallery-row {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 18px;
       margin-top: 10px;
     }
+
     .gallery-img {
       width: 100%;
       border-radius: 14px;
       display: block;
       object-fit: cover;
     }
+
     .github-button {
       display: inline-block;
       margin-top: 8px;
@@ -84,26 +91,34 @@
       color: #f9fafb;
       font-weight: 500;
     }
+
     .github-button:hover {
       background: #2563eb;
     }
+
     footer {
       text-align: center;
       padding: 40px 0 20px;
       font-size: 0.9rem;
-      color: #9ca3af;
+      color: #6b7280;
+    }
+
+    a {
+      color: #1d4ed8;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Blue Gradient -->
+  <!-- Blue Gradient (from your shared style.css) -->
   <div class="top-gradient"></div>
 
   <!-- NAVBAR -->
   <header class="nav-header">
-    <div class="nav-left"><a href="index.html" class="back-home">Aryaan Saxena</a></div>
+    <div class="nav-left">
+      <a href="index.html" class="back-home">Aryaan Saxena</a>
+    </div>
     <nav class="nav-right">
       <a href="index.html#featured">Featured</a>
       <a href="index.html#projects">Projects</a>
@@ -123,7 +138,7 @@
 
   <!-- MAIN IMAGE -->
   <section class="section">
-    <!-- 🔵 Just replace THIS src with your hero photo path -->
+    <!-- Just replace THIS src with your hero photo path -->
     <img
       class="main-image"
       src="images/iot-clock-hero.jpg"
@@ -199,7 +214,7 @@
   <section class="section">
     <h2 class="section-title">Gallery</h2>
     <div class="gallery-row">
-      <!-- 🟦 Replace ONLY the src values below with your actual image paths -->
+      <!-- Replace ONLY the src values below with your actual image paths -->
       <img
         class="gallery-img"
         src="images/iot-clock-setup.jpg"
@@ -221,7 +236,7 @@
   <!-- GITHUB + LINKS -->
   <section class="section">
     <h2 class="section-title">Project Links</h2>
-    <!-- 🔵 Replace href with your repo URL -->
+    <!-- Replace href with your repo URL -->
     <a href="https://github.com/your-username/your-iot-clock-repo" class="github-button" target="_blank">
       View on GitHub
     </a>
