@@ -1,8 +1,266 @@
 <!DOCTYPE html>
-<html>
-  <head><title>Project Title</title></head>
-  <body>
-    <h1>Coming Soon!</h1>
-    <p>Details about this project will be added soon.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FPGA Digital Stopwatch & Timer | Aryaan Saxena</title>
+
+  <!-- Shared site styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Page-specific styles -->
+  <style>
+    body {
+      background: #ffffff;
+      color: #111111;
+    }
+
+    .project-hero {
+      max-width: 900px;
+      margin: 80px auto 40px;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+    .project-hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.4rem;
+      color: #2563eb;
+    }
+
+    .project-subtitle {
+      color: #555555;
+      max-width: 650px;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      color: #111111;
+    }
+
+    .project-text {
+      line-height: 1.6;
+      color: #111111;
+    }
+
+    .project-list {
+      margin-top: 0.5rem;
+      padding-left: 1.3rem;
+    }
+
+    .project-list li {
+      margin-bottom: 0.25rem;
+      color: #111111;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+
+    .video-wrapper {
+      margin-top: 12px;
+    }
+
+    .project-video {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .video-caption {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .github-button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: #3b82f6;
+      color: #f9fafb;
+      font-weight: 500;
+    }
+
+    .github-button:hover {
+      background: #2563eb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0 20px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    a {
+      color: #1d4ed8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Blue gradient from main theme -->
+  <div class="top-gradient"></div>
+
+  <!-- NAVBAR -->
+  <header class="nav-header">
+    <div class="nav-left">
+      <a href="index.html" class="back-home">Aryaan Saxena</a>
+    </div>
+    <nav class="nav-right">
+      <a href="index.html#featured">Featured</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="project-hero">
+    <h1>FPGA Digital Stopwatch & Timer</h1>
+    <p class="project-subtitle">
+      A multi-mode stopwatch/timer built on a Basys3 FPGA using Verilog, finite state machines, and 7-segment LED control.
+    </p>
+  </section>
+
+  <!-- MAIN IMAGE (optional photo of Basys3 setup) -->
+  <section class="section">
+    <!-- Replace this src with your own Basys3 / lab photo -->
+    <img
+      class="main-image"
+      src="images/digital-stopwatch-hero.jpg"
+      alt="Basys3 FPGA board running multi-mode digital stopwatch and timer"
+    />
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section">
+    <h2 class="section-title">Overview</h2>
+    <p class="project-text">
+      In this project I built a multi-mode digital stopwatch/timer on a <strong>Basys3 FPGA</strong>. I wrote the core
+      logic in <strong>Verilog</strong> using finite state machines to handle four different operating modes
+      (stopwatch, countdown, and more) while keeping the design synthesizable and readable.
+      <br><br>
+      I divided down the on-board system clock to get <strong>10&nbsp;ms timing resolution</strong>, drove the
+      <strong>7-segment LED displays</strong> with a multiplexing scheme, and mapped all of the switches and buttons
+      using <strong>Xilinx constraint (.xdc) files</strong>. Using Vivado, I went from RTL to bitstream, ran functional
+      and timing simulations, and learned how small changes in my state machine or reset logic could break the entire
+      design.
+      <br><br>
+      It was my first real exposure to thinking in <strong>cycles and signals</strong> instead of lines of code, and it
+      completely changed how I think about timing, resources, and hardware behavior.
+    </p>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <h2 class="section-title">How It Works</h2>
+    <p class="project-text">
+      At a high level, the stopwatch is a collection of synchronous modules tied together by a top-level FSM:
+    </p>
+    <ul class="project-list project-text">
+      <li>
+        A <strong>clock divider</strong> module scales the Basys3 100&nbsp;MHz clock down to a 10&nbsp;ms tick used for
+        timekeeping.
+      </li>
+      <li>
+        A <strong>finite state machine</strong> controls the four operating modes, start/stop behavior, and when the
+        counters increment or reset.
+      </li>
+      <li>
+        <strong>BCD counters</strong> track minutes and seconds and feed into the display driver.
+      </li>
+      <li>
+        A <strong>7-segment multiplexing driver</strong> rapidly scans through digits so all four displays appear
+        illuminated simultaneously.
+      </li>
+      <li>
+        All buttons and switches are mapped in a <strong>.xdc constraint file</strong>, tying logical signals to actual
+        Basys3 I/O pins.
+      </li>
+    </ul>
+    <p class="project-text">
+      Most of the debugging happened at the waveform level in Vivado. Watching the FSM states, enables, and reset
+      signals line up with the 10&nbsp;ms tick taught me how sensitive real hardware is to off-by-one cycles and
+      asynchronous resets.
+    </p>
+  </section>
+
+  <!-- TECHNICAL HIGHLIGHTS -->
+  <section class="section">
+    <h2 class="section-title">Technical Highlights</h2>
+    <ul class="project-list project-text">
+      <li>Designed Verilog modules for clock division, FSM control, BCD counters, and 7-segment display drivers</li>
+      <li>Implemented four operating modes with a synthesizable finite state machine</li>
+      <li>Configured Basys3 I/O via Xilinx <strong>.xdc</strong> constraints for switches, buttons, and LEDs</li>
+      <li>Used Vivado for RTL simulation, timing analysis, and bitstream generation</li>
+      <li>Debugged reset logic, metastability issues, and off-by-one timing bugs at the waveform level</li>
+    </ul>
+  </section>
+
+  <!-- VIDEO DEMO -->
+  <section class="section">
+    <h2 class="section-title">Demo Video</h2>
+    <div class="video-wrapper">
+      <!-- OPTION 1: Local video file -->
+      <!-- Replace src with your actual video path (e.g. videos/digital-stopwatch-demo.mp4) -->
+      <video class="project-video" controls>
+        <source src="videos/digital-stopwatch-demo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- OPTION 2: YouTube (replace the whole <video> block above with this iframe)
+      <iframe
+        class="project-video"
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="Digital Stopwatch Demo"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+      -->
+
+      <p class="video-caption">
+        Here’s a demo of my teammate and me walking through all four modes of the stopwatch — just disregard how we act
+        in the video, I definitely didn’t expect it to end up in a portfolio.
+      </p>
+    </div>
+  </section>
+
+  <!-- GITHUB + LINKS -->
+  <section class="section">
+    <h2 class="section-title">Project Links</h2>
+    <!-- Replace href with your repo URL if you upload it -->
+    <a href="https://github.com/your-username/digital-stopwatch-fpga" class="github-button" target="_blank">
+      View on GitHub
+    </a>
+
+    <p style="margin-top: 20px;">
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Aryaan Saxena
+  </footer>
+
+</body>
 </html>
