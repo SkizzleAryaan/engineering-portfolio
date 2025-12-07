@@ -1,1 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Smartwatch | Aryaan Saxena</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      background: #ffffff;
+      color: #111111;
+    }
+
+    .project-hero {
+      max-width: 900px;
+      margin: 80px auto 40px;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+    .project-hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.4rem;
+      color: #2563eb;
+    }
+
+    .project-subtitle {
+      color: #555555;
+      max-width: 650px;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      color: #2563eb;
+    }
+
+    .project-text {
+      line-height: 1.6;
+      color: #111111;
+    }
+
+    .project-list {
+      margin-top: 0.5rem;
+      padding-left: 1.3rem;
+    }
+
+    .project-list li {
+      margin-bottom: 0.25rem;
+      color: #111111;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+
+    .video-wrapper {
+      margin-top: 12px;
+    }
+
+    .project-video {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .video-caption {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .github-button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: #3b82f6;
+      color: #f9fafb;
+      font-weight: 500;
+    }
+
+    .github-button:hover {
+      background: #2563eb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0 20px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    a {
+      color: #1d4ed8;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top gradient from main site -->
+  <div class="top-gradient"></div>
+
+  <!-- NAVBAR -->
+  <header class="nav-header">
+    <div class="nav-left"><a href="index.html" class="back-home">Aryaan Saxena</a></div>
+    <nav class="nav-right">
+      <a href="index.html#featured">Featured</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="project-hero">
+    <h1>Custom Smartwatch</h1>
+    <p class="project-subtitle">
+      Building my own wearable from scratch: low-power hardware, embedded UX, and a custom firmware stack.
+    </p>
+  </section>
+
+  <!-- MAIN IMAGE -->
+  <section class="section">
+    <!-- 🔵 Replace this src with a render/photo of your watch or early prototype -->
+    <img
+      class="main-image"
+      src="images/smartwatch-hero.jpg"
+      alt="Custom smartwatch prototype with display and PCB"
+    />
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section">
+    <h2 class="section-title">Overview</h2>
+    <p class="project-text">
+      I’ve always liked the idea of <em>building</em> my own wearable instead of just buying one, so I’m designing a
+      custom smartwatch from the ground up. The goal isn’t to beat Apple or Samsung — it’s to understand what it really
+      takes to ship a tiny, always-on device that someone actually wears every day.
+      <br><br>
+      On the technical side, I’m building out a low-power embedded platform with a small display, onboard sensors, and
+      wireless connectivity, then writing the firmware to drive the whole stack. The watch will handle things like basic
+      notifications, simple fitness or habit tracking, and small “glanceable” interactions.
+    </p>
+  </section>
+
+  <!-- WHAT I'M BUILDING -->
+  <section class="section">
+    <h2 class="section-title">What I’m Building</h2>
+    <p class="project-text">
+      Under the hood, the watch is a layered embedded system:
+    </p>
+    <ul class="project-list project-text">
+      <li>A low-power microcontroller driving a <strong>small color display</strong>.</li>
+      <li>Onboard <strong>sensors</strong> (e.g., IMU, light sensor, maybe heart rate down the line).</li>
+      <li><strong>Wireless connectivity</strong> for syncing with a phone or companion device.</li>
+      <li>Custom <strong>firmware</strong> for UI navigation, notifications, and data logging.</li>
+    </ul>
+    <p class="project-text">
+      Right now I’m focused on getting a smooth, responsive UI loop running on a tight power budget, plus a clean
+      communication link for pushing notifications and pulling data off the watch.
+    </p>
+  </section>
+
+  <!-- TECHNICAL FOCUS -->
+  <section class="section">
+    <h2 class="section-title">Technical Focus</h2>
+    <p class="project-text">
+      This project is my sandbox for combining embedded systems, UX, and product thinking. Some of the areas I’m
+      deliberately pushing on:
+    </p>
+    <ul class="project-list project-text">
+      <li><strong>Power management:</strong> budgeting battery life, choosing update rates, and putting peripherals to sleep whenever possible.</li>
+      <li><strong>Embedded UI design:</strong> keeping animations and screen updates smooth without wasting cycles.</li>
+      <li><strong>Sync & messaging:</strong> deciding what must run on the watch vs. what can be offloaded to a phone or backend.</li>
+      <li><strong>Firmware architecture:</strong> structuring the code so it’s maintainable as features grow.</li>
+    </ul>
+  </section>
+
+  <!-- WHY IT MATTERS -->
+  <section class="section">
+    <h2 class="section-title">Why I’m Building It</h2>
+    <p class="project-text">
+      This project is forcing me to think like a product engineer instead of just a lab student. It’s not enough for the
+      code to “work” — the watch has to feel good to use, last long enough on a charge, and make smart tradeoffs between
+      features and constraints.
+      <br><br>
+      It’s still in progress, but it’s already become my favorite playground for experimenting with embedded UX,
+      low-power firmware, and wearable hardware design.
+    </p>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section">
+    <h2 class="section-title">Gallery (Coming Soon)</h2>
+    <p class="project-text">
+      I’ll add more photos and build logs here as the hardware and enclosure come together.
+    </p>
+    <div class="gallery-row">
+      <!-- 🟦 Replace these with real images when you have them -->
+      <img
+        class="gallery-img"
+        src="images/smartwatch-pcb.jpg"
+        alt="Early PCB or breadboard layout for the custom smartwatch"
+      />
+      <img
+        class="gallery-img"
+        src="images/smartwatch-ui.jpg"
+        alt="Prototype user interface running on the watch display"
+      />
+    </div>
+  </section>
+
+  <!-- LINKS -->
+  <section class="section">
+    <h2 class="section-title">Project Links</h2>
+    <!-- 🔵 Add a repo when you’re ready -->
+    <a href="https://github.com/your-username/custom-smartwatch" class="github-button" target="_blank">
+      View on GitHub (Coming Soon)
+    </a>
+
+    <p style="margin-top: 20px;">
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Aryaan Saxena
+  </footer>
+</body>
+</html>
 
