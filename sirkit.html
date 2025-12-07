@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legend of Sir Kit | Aryaan Saxena</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Project-page layout styles -->
+   <style>
+    body {
+      background: #ffffff;
+      color: #111111;
+    }
+
+    .project-hero {
+      max-width: 900px;
+      margin: 80px auto 40px;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+    .project-hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.4rem;
+      color: #2563eb;
+    }
+
+    .project-subtitle {
+      color: #555555;
+      max-width: 650px;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      color: #2563eb;
+    }
+
+    .project-text {
+      line-height: 1.6;
+      color: #111111;
+    }
+
+    .project-list {
+      margin-top: 0.5rem;
+      padding-left: 1.3rem;
+    }
+
+    .project-list li {
+      margin-bottom: 0.25rem;
+      color: #111111;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+
+    .video-wrapper {
+      margin-top: 12px;
+    }
+
+    .project-video {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .video-caption {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .github-button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: #3b82f6;
+      color: #f9fafb;
+      font-weight: 500;
+    }
+
+    .github-button:hover {
+      background: #2563eb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0 20px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    a {
+      color: #1d4ed8;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top gradient from main site -->
+  <div class="top-gradient"></div>
+
+  <!-- NAVBAR -->
+  <header class="nav-header">
+    <div class="nav-left"><a href="index.html" class="back-home">Aryaan Saxena</a></div>
+    <nav class="nav-right">
+      <a href="index.html#featured">Featured</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="project-hero">
+    <h1>Legend of Sir Kit</h1>
+    <p class="project-subtitle">
+      Turning a low-power TM4C123 into a tiny handheld game console with graphics, sound, and interrupts.
+    </p>
+  </section>
+
+  <!-- MAIN IMAGE -->
+  <section class="section">
+    <!-- 🔵 Replace this src with your actual Sir Kit photo -->
+    <img
+      class="main-image"
+      src="images/sirkit-hero.jpg"
+      alt="Legend of Sir Kit running on TM4C123 with joystick and LCD"
+    />
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section">
+    <h2 class="section-title">Overview</h2>
+    <p class="project-text">
+      <strong>Legend of Sir Kit</strong> was my attempt to turn a low-power microcontroller into a full game console.
+      Using a <strong>TM4C123</strong>, I wrote low-level C drivers to read a joystick via the
+      <strong>ADC</strong>, handle buttons with <strong>GPIO interrupts</strong>, and send graphics over
+      <strong>SPI</strong> to an <strong>ST7735 LCD</strong>. Periodic timers drove the game loop while
+      edge-triggered interrupts kept movement responsive.
+      <br><br>
+      I reused my DAC work to generate in-game sound effects with a timer-driven audio engine and added
+      quality-of-life features like <strong>multilingual text</strong> and <strong>score tracking</strong>.
+      The fun part was squeezing everything into limited RAM and CPU cycles while still making the game feel smooth.
+      It forced me to think in terms of registers, timing, and interrupt priority instead of just “game logic.”
+    </p>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <h2 class="section-title">How It Works</h2>
+    <p class="project-text">
+      Under the hood, the “console” is just a carefully wired set of peripherals and state machines:
+    </p>
+    <ul class="project-list project-text">
+      <li>The <strong>joystick</strong> uses two ADC channels; I map their values to player movement and dead zones.</li>
+      <li><strong>Buttons</strong> generate edge-triggered GPIO interrupts to handle jumps, attacks, and menu actions.</li>
+      <li>A periodic <strong>timer interrupt</strong> ticks the game loop, updating positions, collisions, and scores.</li>
+      <li>The <strong>ST7735 LCD</strong> is driven over SPI with custom draw routines for sprites, HUD, and text.</li>
+      <li>A <strong>DAC + timer</strong> pair outputs simple waveforms for hits, pickups, and UI sounds.</li>
+      <li>All text strings are stored in small language tables so I can flip the UI between multiple languages.</li>
+    </ul>
+    <p class="project-text">
+      Because everything runs on a small microcontroller, I spent a lot of time trimming sprite updates, reducing
+      redraw regions, and making sure no interrupt ever blocked long enough to cause visible input lag.
+    </p>
+  </section>
+
+  <!-- TECHNICAL HIGHLIGHTS -->
+  <section class="section">
+    <h2 class="section-title">Technical Highlights</h2>
+    <ul class="project-list project-text">
+      <li>Embedded C game engine running on <strong>TM4C123</strong> with Keil µVision.</li>
+      <li>Joystick input via <strong>ADC</strong> and digital buttons via <strong>GPIO interrupts</strong>.</li>
+      <li>Graphics rendered to <strong>ST7735 LCD</strong> over <strong>SPI</strong> with custom sprite and tile routines.</li>
+      <li>Timer-driven <strong>DAC</strong> audio for sound effects and simple music cues.</li>
+      <li>Finite state machines for game states, menus, and enemy behavior.</li>
+      <li><strong>Multilingual UI</strong> and score tracking stored in lightweight data structures.</li>
+      <li>Careful CPU and memory budgeting to keep frame updates responsive on a constrained MCU.</li>
+    </ul>
+  </section>
+
+  <!-- GALLERY (optional) -->
+  <section class="section">
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery-row">
+      <!-- 🔵 Replace src values with your images -->
+      <div>
+        <img
+          class="gallery-img"
+          src="images/sirkit-gameplay.jpg"
+          alt="Gameplay screen of Legend of Sir Kit on LCD"
+        />
+        <div class="gallery-caption">
+          Gameplay shot of Sir Kit dodging enemies on the ST7735 LCD.
+        </div>
+      </div>
+      <div>
+        <img
+          class="gallery-img"
+          src="images/sirkit-hardware.jpg"
+          alt="Breadboarded Legend of Sir Kit hardware setup"
+        />
+        <div class="gallery-caption">
+          TM4C123, joystick, buttons, DAC, and LCD all wired on the lab bench.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GITHUB + LINKS -->
+  <section class="section">
+    <h2 class="section-title">Project Links</h2>
+    <!-- 🔵 Replace href with the actual GitHub repo URL -->
+    <a href="https://github.com/your-username/legend-of-sir-kit" class="github-button" target="_blank">
+      View on GitHub
+    </a>
+
+    <p style="margin-top: 20px;">
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Aryaan Saxena
+  </footer>
+</body>
+</html>
