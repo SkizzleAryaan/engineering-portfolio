@@ -1,8 +1,256 @@
 <!DOCTYPE html>
-<html>
-  <head><title>Project Title</title></head>
-  <body>
-    <h1>Coming Soon!</h1>
-    <p>Details about this project will be added soon.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Honda Pet Travel Safety System | Aryaan Saxena</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      background: #ffffff;
+      color: #111111;
+    }
+
+    .project-hero {
+      max-width: 900px;
+      margin: 80px auto 40px;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+    .project-hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.4rem;
+      color: #2563eb;
+    }
+
+    .project-subtitle {
+      color: #555555;
+      max-width: 650px;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      color: #2563eb;
+    }
+
+    .project-text {
+      line-height: 1.6;
+      color: #111111;
+    }
+
+    .project-list {
+      margin-top: 0.5rem;
+      padding-left: 1.3rem;
+    }
+
+    .project-list li {
+      margin-bottom: 0.25rem;
+      color: #111111;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+
+    .video-wrapper {
+      margin-top: 12px;
+    }
+
+    .project-video {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .video-caption {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .github-button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: #3b82f6;
+      color: #f9fafb;
+      font-weight: 500;
+    }
+
+    .github-button:hover {
+      background: #2563eb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0 20px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    a {
+      color: #1d4ed8;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top gradient from main site -->
+  <div class="top-gradient"></div>
+
+  <!-- NAVBAR -->
+  <header class="nav-header">
+    <div class="nav-left"><a href="index.html" class="back-home">Aryaan Saxena</a></div>
+    <nav class="nav-right">
+      <a href="index.html#featured">Featured</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="project-hero">
+    <h1>Honda Pet Travel Safety System</h1>
+    <p class="project-subtitle">
+      Team-led, Honda-sponsored embedded system for monitoring in-car conditions and protecting pets in parked vehicles.
+    </p>
+  </section>
+
+  <!-- MAIN IMAGE -->
+  <section class="section">
+    <!-- 🔵 Replace this src with a real photo/render of your prototype or block diagram -->
+    <img
+      class="main-image"
+      src="images/pet-travel-hero.jpg"
+      alt="Pet travel safety embedded prototype with sensors and web dashboard"
+    />
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section">
+    <h2 class="section-title">Overview</h2>
+    <p class="project-text">
+      This project is about solving a very real problem: leaving pets in cars is dangerous, but people still do it,
+      often without realizing how fast conditions change. I’m leading a team on a
+      <strong>Honda-sponsored project</strong> to design an embedded system that mounts in a vehicle and continuously
+      monitors cabin conditions like temperature, humidity, and light level, then pushes alerts to a phone or web
+      dashboard when things become unsafe.
+      <br><br>
+      As team lead, I’ve been coordinating both the embedded and software sides: defining requirements with Honda
+      engineers, breaking down tasks for the hardware and web teams, and making sure our design decisions line up with
+      how real drivers would actually use the system.
+    </p>
+  </section>
+
+  <!-- ARCHITECTURE & DEMO -->
+  <section class="section">
+    <h2 class="section-title">Architecture & First Demo</h2>
+    <p class="project-text">
+      Our system is built around a simple idea: <em>sensor → microcontroller → cloud → dashboard</em>.
+      For the first milestone, I built a proof-of-concept that:
+    </p>
+    <ul class="project-list project-text">
+      <li>Used a <strong>microcontroller</strong> and <strong>photoresistor</strong> to read in-cabin light levels.</li>
+      <li>Published live readings over Wi-Fi using <strong>MQTT over TCP</strong>.</li>
+      <li>Streamed that data into a <strong>web app dashboard</strong> for visualization.</li>
+    </ul>
+    <p class="project-text">
+      We presented that prototype to Honda engineers to prove out the end-to-end flow:
+      <strong>sensor → MCU → MQTT broker → web UI</strong>. Their feedback helped us shape the next steps toward full
+      cabin monitoring and alerting.
+    </p>
+  </section>
+
+  <!-- WHAT I DO AS TEAM LEAD -->
+  <section class="section">
+    <h2 class="section-title">My Role as Team Lead</h2>
+    <ul class="project-list project-text">
+      <li>Owned the <strong>system architecture</strong> across embedded, networking, and web layers.</li>
+      <li>Defined <strong>requirements and milestones</strong> in collaboration with Honda engineers.</li>
+      <li>Coordinated tasks between the <strong>embedded firmware team</strong> and the <strong>web/dashboard team</strong>.</li>
+      <li>Built and demoed the first <strong>MQTT-based end-to-end prototype</strong> for live sensor streaming.</li>
+    </ul>
+    <p class="project-text">
+      It’s been a good test of both my technical skills (firmware, MQTT, web dev) and my ability to keep a
+      multi-disciplinary project moving in the same direction.
+    </p>
+  </section>
+
+  <!-- NEXT STEPS -->
+  <section class="section">
+    <h2 class="section-title">Next Steps</h2>
+    <p class="project-text">
+      The next phase is to expand the architecture with:
+    </p>
+    <ul class="project-list project-text">
+      <li>Additional <strong>environmental sensors</strong> for temperature, humidity, and potentially CO₂.</li>
+      <li>Smarter <strong>alert logic</strong> that considers trends, thresholds, and dwell time in unsafe states.</li>
+      <li>A more polished <strong>dashboard UI</strong> for visualizing cabin conditions over time.</li>
+      <li>Refined <strong>hardware design</strong> that can live in a real vehicle environment.</li>
+    </ul>
+    <p class="project-text">
+      My goal is to turn this into something that looks and feels like a real product—something a driver could actually
+      trust when they leave their pet in the car for “just a minute.”
+    </p>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section">
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery-row">
+      <!-- 🟦 Replace these with real images when you have them -->
+      <img
+        class="gallery-img"
+        src="images/pet-travel-prototype.jpg"
+        alt="Early breadboard prototype of the pet travel monitoring system"
+      />
+      <img
+        class="gallery-img"
+        src="images/pet-travel-webui.jpg"
+        alt="Web dashboard showing in-car sensor data"
+      />
+      <img
+        class="gallery-img"
+        src="images/pet-travel-demo.jpg"
+        alt="Demo setup presented to Honda engineers"
+      />
+    </div>
+  </section>
+
+  <!-- GITHUB + LINKS -->
+  <section class="section">
+    <h2 class="section-title">Project Links</h2>
+    <!-- 🔵 Replace href with your repo URL when it’s public -->
+    <a href="https://github.com/your-username/pet-travel-safety" class="github-button" target="_blank">
+      View on GitHub
+    </a>
+
+    <p style="margin-top: 20px;">
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Aryaan Saxena
+  </footer>
+</body>
 </html>
