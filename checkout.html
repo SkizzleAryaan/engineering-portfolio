@@ -1,1 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hardware Checkout Web App | Aryaan Saxena</title>
+  <link rel="stylesheet" href="style.css" />
 
+  <style>
+    body {
+      background: #ffffff;
+      color: #111111;
+    }
+
+    .project-hero {
+      max-width: 900px;
+      margin: 80px auto 40px;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+    .project-hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.4rem;
+      color: #2563eb;
+    }
+
+    .project-subtitle {
+      color: #555555;
+      max-width: 650px;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      color: #2563eb;
+    }
+
+    .project-text {
+      line-height: 1.6;
+      color: #111111;
+    }
+
+    .project-list {
+      margin-top: 0.5rem;
+      padding-left: 1.3rem;
+    }
+
+    .project-list li {
+      margin-bottom: 0.25rem;
+      color: #111111;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+
+    .video-wrapper {
+      margin-top: 12px;
+    }
+
+    .project-video {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .video-caption {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .github-button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: #3b82f6;
+      color: #f9fafb;
+      font-weight: 500;
+    }
+
+    .github-button:hover {
+      background: #2563eb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0 20px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    a {
+      color: #1d4ed8;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top gradient from main site -->
+  <div class="top-gradient"></div>
+
+  <!-- NAVBAR -->
+  <header class="nav-header">
+    <div class="nav-left"><a href="index.html" class="back-home">Aryaan Saxena</a></div>
+    <nav class="nav-right">
+      <a href="index.html#featured">Featured</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="project-hero">
+    <h1>Hardware Checkout Web App</h1>
+    <p class="project-subtitle">
+      A full-stack Flask + React system for managing lab equipment loans, roles, and overdue gear.
+    </p>
+  </section>
+
+  <!-- MAIN IMAGE -->
+  <section class="section">
+    <!-- 🔵 Replace this src with a real screenshot of your app -->
+    <img
+      class="main-image"
+      src="images/hw-checkout-hero.jpg"
+      alt="Hardware checkout web application dashboard"
+    />
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section">
+    <h2 class="section-title">Overview</h2>
+    <p class="project-text">
+      For a software engineering lab, my team and I built a <strong>hardware checkout web app</strong>
+      to manage lab equipment loans. I worked across the stack:
+      a <strong>Python Flask backend</strong>, a <strong>React frontend</strong>, and a
+      <strong>MongoDB</strong> database for inventory, users, and transaction history.
+      <br><br>
+      The goal was to replace ad-hoc spreadsheets with a proper system where students can browse
+      available hardware, submit checkout requests, and return items, while TAs and admins can
+      approve, deny, and track everything in one place.
+    </p>
+  </section>
+
+  <!-- SYSTEM DESIGN -->
+  <section class="section">
+    <h2 class="section-title">System Design</h2>
+    <p class="project-text">
+      The app is built as a standard full-stack web system:
+    </p>
+    <ul class="project-list project-text">
+      <li>
+        <strong>Backend:</strong> <strong>Flask</strong> REST API with endpoints for items, users,
+        checkouts, and approvals, backed by <strong>MongoDB</strong>.
+      </li>
+      <li>
+        <strong>Frontend:</strong> <strong>React</strong> single-page app with views for browsing
+        inventory, viewing your loans, and performing actions like request, approve, or return.
+      </li>
+      <li>
+        <strong>Auth & Roles:</strong> Role-based permissions so students, TAs, and admins see different
+        actions and pages.
+      </li>
+      <li>
+        <strong>Deployment:</strong> Deployed to <strong>Heroku</strong>, with <strong>GitHub</strong>
+        for version control and <strong>Jira</strong> for sprint planning and task tracking.
+      </li>
+    </ul>
+    <p class="project-text">
+      It felt like a mini product team: tickets, standups, code reviews, and a live web app that
+      other people could actually break.
+    </p>
+  </section>
+
+  <!-- WHAT I DID & LEARNED -->
+  <section class="section">
+    <h2 class="section-title">What I Did & Learned</h2>
+    <ul class="project-list project-text">
+      <li>Implemented <strong>Flask REST endpoints</strong> for check-in/out, user accounts, and role-based actions.</li>
+      <li>Helped design the <strong>MongoDB schema</strong> for inventory, users, and checkout history.</li>
+      <li>Built <strong>React components</strong> for inventory browsing, loan status, and admin approval flows.</li>
+      <li>Integrated the frontend with the backend via <strong>JSON APIs</strong> and Axios-style HTTP calls.</li>
+      <li>Deployed the app to <strong>Heroku</strong> and debugged issues across dev vs. production environments.</li>
+      <li>Used <strong>GitHub</strong> + <strong>Jira</strong> to collaborate in a structured, sprint-based workflow.</li>
+    </ul>
+    <p class="project-text">
+      This project was the first time I got to ship something that felt like a real internal tool:
+      log in, grab hardware, return it later, and have everything tracked without anyone touching Excel.
+    </p>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section">
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery-row">
+      <!-- 🟦 Replace these with actual screenshots -->
+      <img
+        class="gallery-img"
+        src="images/hw-checkout-inventory.jpg"
+        alt="Inventory view of hardware checkout system"
+      />
+      <img
+        class="gallery-img"
+        src="images/hw-checkout-details.jpg"
+        alt="Item details and checkout status"
+      />
+    </div>
+  </section>
+
+  <!-- GITHUB + LINKS -->
+  <section class="section">
+    <h2 class="section-title">Project Links</h2>
+    <!-- 🔵 Replace href with your repo URL -->
+    <a href="https://github.com/your-username/hardware-checkout-app" class="github-button" target="_blank">
+      View on GitHub
+    </a>
+
+    <p style="margin-top: 20px;">
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Aryaan Saxena
+  </footer>
+</body>
+</html>
