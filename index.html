@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aryaan Saxena – Engineering Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Make images inside placeholders auto-fill the cards -->
+  <style>
+    .hero-photo-placeholder img,
+    .img-placeholder img,
+    .small-img-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: inherit;
+    }
+  </style>
 </head>
 
 <body>
@@ -32,7 +45,11 @@
     </div>
 
     <div class="hero-photo-placeholder">
-      <!-- Grey image placeholder -->
+      <!-- 🔵 Replace this with your main hero image -->
+      <img
+        src="images/hero-main.jpg"
+        alt="Aryaan working on embedded hardware at the lab bench"
+      />
     </div>
   </section>
 
@@ -43,24 +60,43 @@
 
     <div class="featured-grid">
 
-  <a href="trel.html" class="featured-card">
-    <div class="img-placeholder"></div>
-    <h3>TREL - TVC System</h3>
-    <p>Rocket Flight Software Engineering</p>
-  </a>
+      <a href="trel.html" class="featured-card">
+        <div class="img-placeholder">
+          <!-- 🔵 Replace src with your TREL thumbnail -->
+          <img
+            src="images/trel-card.jpg"
+            alt="Thrust vector control test stand and rocket hardware"
+          />
+        </div>
+        <h3>TREL - TVC System</h3>
+        <p>Rocket Flight Software Engineering</p>
+      </a>
 
-  <a href="tm4c-esp32.html" class="featured-card">
-    <div class="img-placeholder"></div>
-    <h3>IoT Alarm Clock</h3>
-    <p>Embedded Systems</p>
-  </a>
+      <a href="tm4c-esp32.html" class="featured-card">
+        <div class="img-placeholder">
+          <!-- 🔵 Replace src with your IoT clock thumbnail -->
+          <img
+            src="images/iot-clock-card.jpg"
+            alt="Networked IoT alarm clock with LCD and ESP8266"
+          />
+        </div>
+        <h3>IoT Alarm Clock</h3>
+        <p>Embedded Systems</p>
+      </a>
 
-  <a href="pet-travel.html" class="featured-card">
-    <div class="img-placeholder"></div>
-    <h3>Pet Travel Monitor</h3>
-    <p>Vehicle-mounted environmental safety monitor.</p>
-  </a>
-</div>
+      <a href="pet-travel.html" class="featured-card">
+        <div class="img-placeholder">
+          <!-- 🔵 Replace src with your pet travel system thumbnail -->
+          <img
+            src="images/pet-travel-card.jpg"
+            alt="Pet travel safety monitoring system prototype"
+          />
+        </div>
+        <h3>Pet Travel Monitor</h3>
+        <p>Vehicle-mounted environmental safety monitor.</p>
+      </a>
+
+    </div>
   </section>
 
   <!-- PROJECTS -->
@@ -70,52 +106,106 @@
 
     <div class="project-grid">
 
-  <a href="stopwatch.html" class="project-card">
-    <div class="small-img-placeholder"></div>
-    <h4>Digital Stopwatch</h4>
-  </a>
+      <a href="stopwatch.html" class="project-card">
+        <div class="small-img-placeholder">
+          <!-- 🔵 Replace src with your stopwatch image -->
+          <img
+            src="images/stopwatch-card.jpg"
+            alt="Basys3 FPGA board running multi-mode digital stopwatch"
+          />
+        </div>
+        <h4>Digital Stopwatch</h4>
+      </a>
 
-  <a href="eclair.html" class="project-card">
-    <div class="small-img-placeholder"></div>
-    <h4>PCR Automation Robot</h4>
-  </a>
+      <a href="eclair.html" class="project-card">
+        <div class="small-img-placeholder">
+          <!-- 🔵 Replace src with your PCR robot image -->
+          <img
+            src="images/eclair-card.jpg"
+            alt="PCR automation robot with vision pipeline"
+          />
+        </div>
+        <h4>PCR Automation Robot</h4>
+      </a>
 
-  <a href="tsa.html" class="project-card">
-    <div class="small-img-placeholder"></div>
-    <h4>Chambers of Time</h4>
-  </a>
+      <a href="tsa.html" class="project-card">
+        <div class="small-img-placeholder">
+          <!-- 🔵 Replace src with your TSA game screenshot -->
+          <img
+            src="images/tsa-game-card.jpg"
+            alt="Unity game screenshot from Chambers of Time"
+          />
+        </div>
+        <h4>Chambers of Time</h4>
+      </a>
 
-  <a href="ml" class="project-card">
-    <div class="small-img-placeholder"></div>
-    <h4>Kaggle Competition</h4>
-  </a>
+      <a href="ml.html" class="project-card">
+        <div class="small-img-placeholder">
+          <!-- 🔵 Replace src with your Kaggle/ML-related image -->
+          <img
+            src="images/ml-kaggle-card.jpg"
+            alt="Model performance chart from Kaggle competition"
+          />
+        </div>
+        <h4>Kaggle Competition</h4>
+      </a>
 
-  <a href="sirkit.html" class="project-card">
-    <div class="small-img-placeholder"></div>
-    <h4>The Legend of "Sir Kit"</h4>
-  </a>
+      <a href="sirkit.html" class="project-card">
+        <div class="small-img-placeholder">
+          <!-- 🔵 Replace src with your Legend of Sir Kit image -->
+          <img
+            src="images/sirkit-card.jpg"
+            alt="TM4C123 game system running Legend of Sir Kit"
+          />
+        </div>
+        <h4>The Legend of "Sir Kit"</h4>
+      </a>
 
-  <a href="adsync.html" class="project-card">
-    <div class="small-img-placeholder"></div>
-    <h4>Adsync</h4>
-  </a>
+      <a href="adsync.html" class="project-card">
+        <div class="small-img-placeholder">
+          <!-- 🔵 Replace src with your Adsync project image -->
+          <img
+            src="images/adsync-card.jpg"
+            alt="UI or diagram from Adsync project"
+          />
+        </div>
+        <h4>Adsync</h4>
+      </a>
 
-  <a href="auction.html" class="project-card">
-    <div class="small-img-placeholder"></div>
-    <h4>Auction System</h4>
-  </a>
+      <a href="auction.html" class="project-card">
+        <div class="small-img-placeholder">
+          <!-- 🔵 Replace src with your auction system UI shot -->
+          <img
+            src="images/auction-card.jpg"
+            alt="Java auction system client UI"
+          />
+        </div>
+        <h4>Auction System</h4>
+      </a>
 
-  <a href="checkout.html" class="project-card">
-    <div class="small-img-placeholder"></div>
-    <h4>Hardware Checkout App</h4>
-  </a>
+      <a href="checkout.html" class="project-card">
+        <div class="small-img-placeholder">
+          <!-- 🔵 Replace src with your hardware checkout app UI -->
+          <img
+            src="images/checkout-card.jpg"
+            alt="Hardware checkout web application interface"
+          />
+        </div>
+        <h4>Hardware Checkout App</h4>
+      </a>
 
-  <a href="smartwatch.html" class="project-card">
-    <div class="small-img-placeholder"></div>
-    <h4>Custom Smartwatch</h4>
-  </a>
+      <a href="smartwatch.html" class="project-card">
+        <div class="small-img-placeholder">
+          <!-- 🔵 Replace src with your smartwatch render or prototype -->
+          <img
+            src="images/smartwatch-card.jpg"
+            alt="Custom smartwatch prototype render"
+          />
+        </div>
+        <h4>Custom Smartwatch</h4>
+      </a>
 
-</div>
+    </div>
 
   </section>
 
