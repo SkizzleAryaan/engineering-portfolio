@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ML Hackathon (Kaggle Challenge) | Aryaan Saxena</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      background: #ffffff;
+      color: #111111;
+    }
+
+    .project-hero {
+      max-width: 900px;
+      margin: 80px auto 40px;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+    .project-hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.4rem;
+      color: #2563eb;
+    }
+
+    .project-subtitle {
+      color: #555555;
+      max-width: 600px;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      color: #2563eb;
+    }
+
+    .project-text {
+      line-height: 1.6;
+      color: #111111;
+    }
+
+    .project-list {
+      margin-top: 0.5rem;
+      padding-left: 1.3rem;
+    }
+
+    .project-list li {
+      margin-bottom: 0.25rem;
+      color: #111111;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .github-button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: #3b82f6;
+      color: #f9fafb;
+      font-weight: 500;
+    }
+
+    .github-button:hover {
+      background: #2563eb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0 20px;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top gradient from main site -->
+  <div class="top-gradient"></div>
+
+  <!-- NAVBAR -->
+  <header class="nav-header">
+    <div class="nav-left"><a href="index.html" class="back-home">Aryaan Saxena</a></div>
+    <nav class="nav-right">
+      <a href="index.html#featured">Featured</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="project-hero">
+    <h1>ML Hackathon (Kaggle Challenge)</h1>
+    <p class="project-subtitle">
+      Binary classification on anonymized data — iterating through models and metrics until I hit 0.87680 AUC.
+    </p>
+  </section>
+
+  <!-- MAIN IMAGE (optional) -->
+  <section class="section">
+    <!-- 🔵 Replace this src with a simple plot / leaderboard screenshot if you have one -->
+    <img
+      class="main-image"
+      src="images/ml-hackathon-hero.jpg"
+      alt="Visualization of model performance for ML hackathon"
+    />
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section">
+    <h2 class="section-title">Overview</h2>
+    <p class="project-text">
+      For my data science lab’s <strong>Kaggle-style competition</strong>, I worked on a
+      <strong>binary classification</strong> problem with fully anonymized features and
+      <strong>AUC</strong> as the scoring metric. With no domain context to lean on, the goal was simple:
+      use the data and the metrics to drive everything.
+      <br><br>
+      I started with the basics in <strong>Python</strong> — loading the data with <strong>pandas</strong>,
+      exploring distributions, handling missing values, and building simple baselines using
+      <strong>scikit-learn</strong> models like logistic regression and random forests. From there I moved into
+      gradient-boosted approaches and iterative tuning.
+    </p>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="section">
+    <h2 class="section-title">Approach</h2>
+    <p class="project-text">
+      My workflow was very much “try, measure, refine”:
+    </p>
+    <ul class="project-list project-text">
+      <li>Used <strong>pandas</strong> for data loading, cleaning, and basic exploratory analysis.</li>
+      <li>Handled missing values and simple feature prep inside reproducible Python scripts.</li>
+      <li>Built baselines with <strong>LogisticRegression</strong> and <strong>RandomForestClassifier</strong>.</li>
+      <li>Iterated through <strong>gradient-boosted models</strong> (e.g., XGBoost / similar) and tuned key hyperparameters.</li>
+      <li>Tracked performance using <strong>held-out validation sets</strong> and the <strong>AUC</strong> metric.</li>
+    </ul>
+    <p class="project-text">
+      After multiple rounds of tuning and cross-checking on different splits, my best model reached
+      <strong>0.87680 AUC</strong> on the private leaderboard. I wrapped everything into a clean “best model” script,
+      plus a short report explaining which experiments helped and which were dead ends.
+    </p>
+  </section>
+
+  <!-- WHAT I LEARNED -->
+  <section class="section">
+    <h2 class="section-title">What I Learned</h2>
+    <ul class="project-list project-text">
+      <li>How to quickly prototype and compare models in <strong>Python</strong> using <strong>scikit-learn</strong>.</li>
+      <li>How to use <strong>AUC</strong> as a decision-making tool instead of “accuracy only.”</li>
+      <li>Why clean, reproducible scripts and a final “best model” file matter in competitions and real projects.</li>
+      <li>That a lot of ML progress is iterative: try something small, measure it, and keep what actually helps.</li>
+    </ul>
+  </section>
+
+  <!-- GITHUB + LINKS -->
+  <section class="section">
+    <h2 class="section-title">Project Links</h2>
+    <!-- 🔵 Replace href with your actual repo URL -->
+    <a href="https://github.com/your-username/ml-hackathon-woozle" class="github-button" target="_blank">
+      View Code on GitHub
+    </a>
+
+    <p style="margin-top: 20px;">
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Aryaan Saxena
+  </footer>
+</body>
+</html>
