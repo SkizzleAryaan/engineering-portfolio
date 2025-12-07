@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TREL Thrust Vector Control System | Aryaan Saxena</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Page-specific layout styles (do NOT change heading colors here) -->
+  <style>
+    body {
+      background: #ffffff;
+      color: #111111;
+    }
+
+    .project-hero {
+      max-width: 900px;
+      margin: 80px auto 40px;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+    .project-hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.4rem;
+      color: #2563eb;
+    }
+
+    .project-subtitle {
+      color: #555555;
+      max-width: 600px;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      color: #2563eb;
+    }
+
+    .project-text {
+      line-height: 1.6;
+      color: #111111;
+    }
+
+    .project-list {
+      margin-top: 0.5rem;
+      padding-left: 1.3rem;
+    }
+
+    .project-list li {
+      margin-bottom: 0.25rem;
+      color: #111111;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+    }
+    .gallery-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .gallery-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .gallery-img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+      object-fit: cover;
+    }
+    .gallery-caption {
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+    .github-button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: #3b82f6;
+      color: #f9fafb;
+      font-weight: 500;
+    }
+    .github-button:hover {
+      background: #2563eb;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 0 20px;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top gradient from your main theme -->
+  <div class="top-gradient"></div>
+
+  <!-- NAVBAR (same as other pages) -->
+  <header class="nav-header">
+    <div class="nav-left"><a href="index.html" class="back-home">Aryaan Saxena</a></div>
+    <nav class="nav-right">
+      <a href="index.html#featured">Featured</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="project-hero">
+    <h1>TREL Thrust Vector Control System</h1>
+    <p class="project-subtitle">
+      From a 5000&nbsp;lb gimbal test stand in SOLIDWORKS to real-time TVC firmware on an NI sbRIO.
+    </p>
+  </section>
+
+  <!-- MAIN IMAGE -->
+  <section class="section">
+    <!-- 🔵 Replace ONLY this src with your hero photo path -->
+    <img
+      class="main-image"
+      src="images/trel-hero.jpg"
+      alt="TVC test stand and thrust vector control hardware"
+    />
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section">
+    <h2 class="section-title">Overview</h2>
+    <p class="project-text">
+      When I joined the <strong>Texas Rocket Engineering Lab (TREL)</strong>, I actually started on the mechanical
+      side. My first job was helping design a <strong>5000&nbsp;lb-rated gimbal test stand</strong> in SOLIDWORKS
+      to simulate hot-fire loads on our thrust vector control (TVC) system. Going through
+      design reviews with NASA and Virgin-Galactic-affiliated mentors meant justifying every
+      <strong>bolt, beam, and free-body diagram</strong>. It was my first taste of how serious real
+      flight hardware design is.
+      <br><br>
+      From there I shifted into what I really love: <strong>firmware and control</strong>. I wrote embedded
+      C/C++ control software for a <strong>2-axis TVC system</strong> running on an NI sbRIO, starting from
+      “make this actuator move” on an Arduino and ending with a full closed-loop control pipeline.
+      I tuned the loop to run at <strong>100&nbsp;Hz</strong> with <strong>&lt;10&nbsp;ms command-to-actuation latency</strong>,
+      wrote Bash scripts to flash and sync code across <strong>five flight computers</strong> in Linux, and built a
+      valve-control state machine that sequenced <strong>pressurization, purges, and aborts</strong> across all launch
+      phases. Working with GNC and Structures forced me to tie software decisions back to real valve dynamics,
+      load paths, and failure modes.
+    </p>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <h2 class="section-title">How It Works</h2>
+    <p class="project-text">
+      The TVC system is a 2-axis gimbal that steers the rocket’s engine by a few degrees in pitch and yaw to
+      control attitude during flight. On the software side, I helped build a real-time control stack:
+    </p>
+    <ul class="project-list project-text">
+      <li><strong>Sensor &amp; command path:</strong> sbRIO reads actuator feedback and guidance commands, then computes new gimbal angles at 100&nbsp;Hz.</li>
+      <li><strong>Actuator control:</strong> PWM-driven servos convert those angles into physical motion, while limits and rate clamps keep the motion safe.</li>
+      <li><strong>Valve state machine:</strong> a firmware FSM sequences pressurization, chill-down, purge, and abort states for the full hot-fire timeline.</li>
+      <li><strong>Deployment:</strong> Bash scripts flash &amp; synchronize the same image across five flight computers to keep the stack consistent before testing.</li>
+    </ul>
+    <p class="project-text">
+      The result is a system where a change in guidance input propagates through real-time software and comes out as
+      a smooth, controlled engine vector—on the test stand first, and eventually in flight.
+    </p>
+  </section>
+
+  <!-- TECHNICAL HIGHLIGHTS -->
+  <section class="section">
+    <h2 class="section-title">Technical Highlights</h2>
+    <ul class="project-list project-text">
+      <li>Developed embedded C/C++ firmware for a 2-axis TVC system on an NI sbRIO-9637 controller.</li>
+      <li>Tuned a 100&nbsp;Hz control loop with &lt;10&nbsp;ms end-to-end command-to-actuation latency.</li>
+      <li>Implemented PWM-based actuator control and safety limits for gimbal motion.</li>
+      <li>Built a valve-control finite state machine for pressurization, purge, and abort sequences.</li>
+      <li>Wrote Bash automation to flash and synchronize firmware across 5 flight computers in Linux.</li>
+      <li>Co-designed a 5000&nbsp;lb-rated structural test stand in SOLIDWORKS, approved at CDR by NASA/Virgin Galactic reviewers.</li>
+      <li>Collaborated with GNC and Structures teams to align control software with real hardware loads and failure modes.</li>
+    </ul>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section">
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery-row">
+      <!-- 🟦 Replace ONLY the src values with your actual image paths -->
+      <div class="gallery-item">
+        <img
+          class="gallery-img"
+          src="images/trel-fea-ring.jpg"
+          alt="FEA results on TVC ring component"
+        />
+        <div class="gallery-caption">
+          FEA results on one of the TVC ring components, checking stresses under simulated hot-fire loads.
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          class="gallery-img"
+          src="images/trel-gimbal-stand-cad.jpg"
+          alt="SOLIDWORKS CAD of gimbal test stand"
+        />
+        <div class="gallery-caption">
+          SOLIDWORKS CAD of the bottle-jack-driven gimbal test stand rated for roughly 5000&nbsp;lb axial load.
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          class="gallery-img"
+          src="images/trel-lab-build.jpg"
+          alt="Building the TVC test stand in the lab"
+        />
+        <div class="gallery-caption">
+          Me in the lab cutting extrusion and assembling the stand while walking other members through the build.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKS -->
+  <section class="section">
+    <h2 class="section-title">Project Links</h2>
+    <!-- 🔵 Replace href with a public writeup or repo if you have one -->
+    <a href="#" class="github-button" target="_blank">
+      View Documentation / Code
+    </a>
+
+    <p style="margin-top: 20px;">
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Aryaan Saxena
+  </footer>
+</body>
+</html>
