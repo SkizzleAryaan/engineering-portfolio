@@ -157,7 +157,7 @@
       <br><br>
       I built a number-recognition system in <strong>Python</strong> using <strong>OpenCV</strong> and
       <strong>Tesseract OCR</strong>. The tricky part was getting consistent crops of the pipette markings, so I
-      implemented a custom <strong>parallel prefix-minimum algorithm</strong> (partly in C) to deskew, align, and
+      implemented a custom <strong>parallel prefix-minimum algorithm</strong> (in Python) to deskew, align, and
       isolate the printed scale before running OCR. From there I engineered a full preprocessing pipeline—grayscale,
       denoising, thresholding, dilation/erosion—to clean the image before text extraction.
       <br><br>
@@ -227,9 +227,6 @@
           src="Screenshot 2025-12-08 154833.jpg"
           alt="Vision overlay showing pipette markings detected by the system"
         />
-        <div class="gallery-caption">
-          Overlay view of the pipette markings after preprocessing and before OCR.
-        </div>
 
         <div class="gallery-item">
         <!-- 🔵 Replace this src with your photo -->
@@ -238,9 +235,6 @@
           src="Screenshot 2025-12-08 154850.jpg"
           alt="Circuit Diagram of System"
         />
-        <div class="gallery-caption">
-          Overlay view of the pipette markings after preprocessing and before OCR.
-        </div>
       </div>
     </div>
   </section>
