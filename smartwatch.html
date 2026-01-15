@@ -140,7 +140,7 @@
     <!-- 🔵 Replace this src with a render/photo of your watch or early prototype -->
     <img
       class="main-image"
-      src="images/smartwatch-hero.jpg"
+      src="IMG_8347.jpg"
       alt="Custom smartwatch prototype with display and PCB"
     />
   </section>
@@ -148,14 +148,15 @@
   <!-- OVERVIEW -->
   <section class="section">
     <h2 class="section-title">Overview</h2>
-    <p class="project-text">
-      I’ve always liked the idea of <em>building</em> my own wearable instead of just buying one, so I’m designing a
-      custom smartwatch from the ground up. The goal isn’t to beat Apple or Samsung — it’s to understand what it really
+    <p class="project-text">     
+      I’ve always liked the idea of <em>building</em> my own wearable instead of just buying one, so I’m designing a 
+      custom smartwatch from the ground up. The goal isn’t to beat Apple or Samsung, it’s to understand what it really 
       takes to ship a tiny, always-on device that someone actually wears every day.
       <br><br>
-      On the technical side, I’m building out a low-power embedded platform with a small display, onboard sensors, and
-      wireless connectivity, then writing the firmware to drive the whole stack. The watch will handle things like basic
-      notifications, simple fitness or habit tracking, and small “glanceable” interactions.
+      On the technical side, I’m building a full stack: a low-power embedded platform with a small display, touch input, 
+      persistent storage, and wireless connectivity, plus firmware that makes it feel like an actual product instead of a demo. 
+      The watch handles “glanceable” interactions like time/date, quick status, and on-the-fly notes built around the idea that 
+      at a convention or networking event, the watch should function like a compact cheat sheet you can access instantly.
     </p>
   </section>
 
@@ -166,14 +167,16 @@
       Under the hood, the watch is a layered embedded system:
     </p>
     <ul class="project-list project-text">
-      <li>A low-power microcontroller driving a <strong>small color display</strong>.</li>
-      <li>Onboard <strong>sensors</strong> (e.g., IMU, light sensor, maybe heart rate down the line).</li>
-      <li><strong>Wireless connectivity</strong> for syncing with a phone or companion device.</li>
-      <li>Custom <strong>firmware</strong> for UI navigation, notifications, and data logging.</li>
+      <li><strong>ESP32-S3 platform</strong> driving a small color display with a custom UI built in <strong>LVGL</strong></li>
+      <li><strong>Touch interaction + gesture navigation</strong> (page switching, mode toggles, note cycling)</li>
+      <li><strong>BLE communication layer</strong> for sending commands, notes, and status updates from a companion app</li>
+      <li><strong>Persistent storage</strong> using NVS/Preferences so notes survive reboots</li>
+      <li><strong>RTC-backed timekeeping</strong> so the clock stays accurate even when powered off</li>
+      <li>A companion <strong>web app</strong> that connects over BLE, manages notes cleanly, and syncs time/date</li>
     </ul>
     <p class="project-text">
-      Right now I’m focused on getting a smooth, responsive UI loop running on a tight power budget, plus a clean
-      communication link for pushing notifications and pulling data off the watch.
+      Right now, the watch is already at the point where it feels usable: you can swipe between pages, store multiple company
+      notes, search and jump to a specific company, and keep accurate time across power cycles.
     </p>
   </section>
 
@@ -185,10 +188,37 @@
       deliberately pushing on:
     </p>
     <ul class="project-list project-text">
-      <li><strong>Power management:</strong> budgeting battery life, choosing update rates, and putting peripherals to sleep whenever possible.</li>
-      <li><strong>Embedded UI design:</strong> keeping animations and screen updates smooth without wasting cycles.</li>
-      <li><strong>Sync & messaging:</strong> deciding what must run on the watch vs. what can be offloaded to a phone or backend.</li>
-      <li><strong>Firmware architecture:</strong> structuring the code so it’s maintainable as features grow.</li>
+      <li><strong>Embedded UI performance + responsiveness:</strong> keeping interactions smooth while layering multiple screens and animations</li>
+      <li><strong>Firmware architecture:</strong> building the watch like a real product (state, persistence, commands, UI updates) instead of a monolithic loop</li>
+      <li><strong>BLE protocol design:</strong> designing a simple command system that works in nRF Connect <em>and</em> scales to real apps</li>
+      <li><strong>Persistence + reliability:</strong> saving notes/time safely, handling edge cases, and making sure the device recovers cleanly after resets</li>
+      <li><strong>RTC integration:</strong> migrating from a purely software-ticked clock to a real RTC and debugging library/API mismatches</li>
+      <li><strong>Human usability constraints:</strong> making sure the UI works for real use (long notes, scrolling behavior, quick access to the right info)</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Challenges &amp; What I Learned</h2>
+      <p class="project-text">
+        A big part of this project has been dealing with real engineering friction
+    </p>
+    <ul class="project-list project-text">
+      <li>
+      <strong>RTC integration wasn’t plug-and-play:</strong> library API mismatches, compile errors, and syncing logic issues forced a deeper understanding
+      of I2C bring-up and time synchronization across power cycles.
+    </li>
+    <li>
+      <strong>Gesture UX tradeoffs:</strong> balancing scrolling within a long note while preserving swipe gestures for switching companies was a subtle
+      but very real interaction design problem on a tiny screen.
+    </li>
+    <li>
+      <strong>Companion app evolution:</strong> moving from nRF Connect to a structured UI required treating BLE commands like a real product API,
+      not just a debug interface.
+    </li>
+    <li>
+      <strong>AI note generation pipeline:</strong> early outputs were too vague to be useful, which pushed improvements in prompt design and output constraints
+      to prioritize concrete conversation starters over generic company summaries.
+    </li>
     </ul>
   </section>
 
@@ -200,8 +230,8 @@
       code to “work” — the watch has to feel good to use, last long enough on a charge, and make smart tradeoffs between
       features and constraints.
       <br><br>
-      It’s still in progress, but it’s already become my favorite playground for experimenting with embedded UX,
-      low-power firmware, and wearable hardware design.
+      It’s still in progress, but it’s already become my favorite playground for building embedded UX, shipping-ready firmware structure,
+    and a real companion workflow — the kind of system that turns hardware into something genuinely useful.
     </p>
   </section>
 
@@ -215,12 +245,12 @@
       <!-- 🟦 Replace these with real images when you have them -->
       <img
         class="gallery-img"
-        src="images/smartwatch-pcb.jpg"
+        src="IMG_8349.jpg
         alt="Early PCB or breadboard layout for the custom smartwatch"
       />
       <img
         class="gallery-img"
-        src="images/smartwatch-ui.jpg"
+        src="IMG_D9291182-458C-4A0F-AB76-734EDF45BCB1.JPEG"
         alt="Prototype user interface running on the watch display"
       />
     </div>
@@ -230,7 +260,7 @@
   <section class="section">
     <h2 class="section-title">Project Links</h2>
     <!-- 🔵 Add a repo when you’re ready -->
-    <a href="https://github.com/your-username/custom-smartwatch" class="github-button" target="_blank">
+    <a href="https://github.com/SkizzleAryaan/watch-app" class="github-button" target="_blank">
       View on GitHub (Coming Soon)
     </a>
 
