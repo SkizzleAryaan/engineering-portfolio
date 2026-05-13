@@ -131,85 +131,118 @@
   <section class="project-hero">
     <h1>Honda Pet Travel Safety System</h1>
     <p class="project-subtitle">
-      Team-led, Honda-sponsored embedded system for monitoring in-car conditions and protecting pets in parked vehicles.
+      Team-led, Honda-sponsored embedded system for monitoring in-car conditions and protecting pets during short unattended periods.
     </p>
   </section>
 
   <!-- MAIN IMAGE -->
+  <section class="section">
+    <img
+      src="capstone-deign-showcase---spring-2026_55236215508_o.jpg"
+      alt="Honda senior design team photo"
+      class="main-image"
+    />
+    <div class="video-caption">Capstone Design Showcase demo with the Honda-sponsored team prototype.</div>
+  </section>
 
   <!-- OVERVIEW -->
   <section class="section">
     <h2 class="section-title">Overview</h2>
     <p class="project-text">
-      This project is about solving a very real problem: leaving pets in cars is dangerous, but people still do it,
-      often without realizing how fast conditions change. I’m leading a team on a
-      <strong>Honda-sponsored project</strong> to design an embedded system that mounts in a vehicle and continuously
-      monitors cabin conditions like temperature, humidity, and light level, then pushes alerts to a phone or web
-      dashboard when things become unsafe.
+      This project is about solving a very real problem. Leaving pets in cars is dangerous, but people still do it,
+      often without realizing how fast conditions can change. I led a <strong>Honda-sponsored senior design project</strong>
+      to build an embedded system that mounts in a vehicle, monitors cabin conditions, and lets the owner check in and respond
+      when things become unsafe.
       <br><br>
-      As team lead, I’ve been coordinating both the embedded and software sides: defining requirements with Honda
-      engineers, breaking down tasks for the hardware and web teams, and making sure our design decisions line up with
-      how real drivers would actually use the system.
+      The current prototype runs on a single <strong>ESP32-S3</strong> and integrates a <strong>BME280</strong> environmental sensor,
+      a <strong>cooling fan</strong>, and a <strong>camera</strong>. Data is sent over Wi-Fi to a dashboard that works on both
+      web and mobile, so the owner can see cabin conditions and control the fan in real time.
     </p>
   </section>
 
-  <!-- ARCHITECTURE & DEMO -->
+  <!-- ARCHITECTURE -->
   <section class="section">
-    <h2 class="section-title">Architecture & First Demo</h2>
+    <h2 class="section-title">Architecture</h2>
     <p class="project-text">
-      Our system is built around a simple idea: <em>sensor → microcontroller → cloud → dashboard</em>.
-      For the first milestone, I built a proof-of-concept that:
+      The architecture is intentionally simple so the system is reliable and easy to duplicate.
+      The ESP32-S3 reads temperature, humidity, and pressure from the BME280 and publishes those readings over Wi-Fi using MQTT.
+      At the same time, the ESP32-S3 streams live video from the camera through its local IP address. The dashboard subscribes to
+      the MQTT data to display cabin readings and provides fan control with <strong>ON/OFF/AUTO</strong> modes.
+      In AUTO mode, the fan turns on when temperature exceeds a set threshold and turns off once it drops below it.
     </p>
+
+    <img
+      src="sd6.jpg"
+      alt="System architecture diagram"
+      class="main-image"
+      style="margin-top: 14px;"
+    />
+    <div class="video-caption">Most up-to-date system flow: ESP32-S3 + BME280 + fan + camera over Wi-Fi to MQTT/HTTP and a web dashboard.</div>
+  </section>
+
+  <!-- WHAT I DID -->
+  <section class="section">
+    <h2 class="section-title">My Role</h2>
     <ul class="project-list project-text">
-      <li>Used a <strong>microcontroller</strong> and <strong>photoresistor</strong> to read in-cabin light levels.</li>
-      <li>Published live readings over Wi-Fi using <strong>MQTT over TCP</strong>.</li>
-      <li>Streamed that data into a <strong>web app dashboard</strong> for visualization.</li>
+      <li>Led a 5-person team and owned the system direction across embedded, networking, web, and mechanical work.</li>
+      <li>Wrote embedded <strong>C/C++</strong> on ESP32-S3 for sensor reading, fan control logic, and camera streaming setup.</li>
+      <li>Built the telemetry + dashboard pipeline using <strong>MQTT over Wi-Fi</strong> and a <strong>React</strong> UI.</li>
+      <li>Designed the enclosure in <strong>SOLIDWORKS</strong> and iterated using <strong>3D printing</strong> for physical prototype demos.</li>
     </ul>
     <p class="project-text">
-      We presented that prototype to Honda engineers to prove out the end-to-end flow:
-      <strong>sensor → MCU → MQTT broker → web UI</strong>. Their feedback helped us shape the next steps toward full
-      cabin monitoring and alerting.
+      This project was a full-stack embedded build. I had to think like a firmware engineer, a web developer, and a product designer
+      at the same time, while also coordinating milestones and sponsor-facing demos.
     </p>
   </section>
 
-  <!-- WHAT I DO AS TEAM LEAD -->
+  <!-- TESTING HIGHLIGHTS -->
   <section class="section">
-    <h2 class="section-title">My Role as Team Lead</h2>
-    <ul class="project-list project-text">
-      <li>Owned the <strong>system architecture</strong> across embedded, networking, and web layers.</li>
-      <li>Defined <strong>requirements and milestones</strong> in collaboration with Honda engineers.</li>
-      <li>Coordinated tasks between the <strong>embedded firmware team</strong> and the <strong>web/dashboard team</strong>.</li>
-      <li>Built and demoed the first <strong>MQTT-based end-to-end prototype</strong> for live sensor streaming.</li>
-    </ul>
+    <h2 class="section-title">Testing Highlights</h2>
     <p class="project-text">
-      It’s been a good test of both my technical skills (firmware, MQTT, web dev) and my ability to keep a
-      multi-disciplinary project moving in the same direction.
+      We focused on proving the prototype works in realistic conditions, especially for live monitoring and reliability.
     </p>
+    <ul class="project-list project-text">
+      <li><strong>Video streaming:</strong> 20–30 FPS under ideal conditions, 10–15 FPS under network congestion.</li>
+      <li><strong>Latency behavior:</strong> internal processing stayed fast, with perceived performance mostly limited by Wi-Fi bandwidth.</li>
+      <li><strong>Reliability:</strong> system ran for extended periods without failure during long-duration tests.</li>
+      <li><strong>Fan control:</strong> fan behavior followed dashboard modes and AUTO threshold logic consistently.</li>
+    </ul>
+  </section>
+
+  <!-- POSTER -->
+  <section class="section">
+    <h2 class="section-title">Poster</h2>
+    <img
+      src="sd5.jpg"
+      alt="Honda Pet Accommodations poster"
+      class="main-image"
+    />
+    <div class="video-caption">Project poster summarizing design solution, evaluation, and conclusions.</div>
   </section>
 
   <!-- NEXT STEPS -->
   <section class="section">
     <h2 class="section-title">Next Steps</h2>
     <p class="project-text">
-      The next phase is to expand the architecture with:
+      The next phase is making the prototype more vehicle-ready and polished.
     </p>
     <ul class="project-list project-text">
-      <li>Additional <strong>environmental sensors</strong> for temperature, humidity, and potentially CO₂.</li>
-      <li>Smarter <strong>alert logic</strong> that considers trends, thresholds, and dwell time in unsafe states.</li>
-      <li>A more polished <strong>dashboard UI</strong> for visualizing cabin conditions over time.</li>
-      <li>Refined <strong>hardware design</strong> that can live in a real vehicle environment.</li>
+      <li>Add the <strong>12 V to 5 V</strong> power path so the device can run directly from a vehicle outlet.</li>
+      <li>Measure power draw across operating modes to confirm safe usage on a 12 V supply.</li>
+      <li>Improve the dashboard UI and tighten the mobile experience.</li>
+      <li>Continue enclosure iteration for mounting, airflow direction, and sensor placement inside a real vehicle.</li>
     </ul>
     <p class="project-text">
-      My goal is to turn this into something that looks and feels like a real product—something a driver could actually
-      trust when they leave their pet in the car for “just a minute.”
+      The goal is to make this feel like a real product. Something a driver could actually trust when they leave their pet in the car
+      for “just a minute.”
     </p>
   </section>
 
-
-  <!-- GITHUB + LINKS -->
+  <!-- LINKS -->
   <section class="section">
     <h2 class="section-title">Project Links</h2>
-    <!-- 🔵 Replace href with your repo URL when it’s public -->
+    <!-- Add repo/demo link when ready -->
+    <!-- <a class="github-button" href="https://github.com/YOUR_REPO" target="_blank">View Code</a> -->
 
     <p style="margin-top: 20px;">
       <a href="index.html" class="back-link">← Back to Portfolio</a>
